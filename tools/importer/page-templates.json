@@ -1,0 +1,447 @@
+{
+  "templates": [
+    {
+      "name": "collections",
+      "urls": [
+        "https://shop.cambriausa.com/collections/samples"
+      ],
+      "representativeUrl": "https://shop.cambriausa.com/collections/samples",
+      "description": "Cambria Samples Store (Shopify) collection listing: centered intro with breadcrumb, shop-by-collection swatch tiles, product card grid (promo tile + product tiles), cream Cambria Difference icon points, material-comparison and resource teaser cards, cream pricing image/text promo and an FAQ accordion",
+      "blocks": [
+        {
+          "name": "cards-swatch",
+          "instances": [
+            ".cc-collection-list .slider__grid"
+          ]
+        },
+        {
+          "name": "cards-product",
+          "instances": [
+            ".main-products-grid__results > ul.grid"
+          ]
+        },
+        {
+          "name": "cards-icon",
+          "instances": [
+            ".cc-icons-with-text .slider__grid"
+          ]
+        },
+        {
+          "name": "cards-teaser",
+          "instances": [
+            ".cc-multi-column ul:has(> li.multi-column)"
+          ]
+        },
+        {
+          "name": "columns-teaser",
+          "instances": [
+            ".cc-media-with-text .media-with-text"
+          ]
+        },
+        {
+          "name": "accordion-faq",
+          "instances": [
+            ".cc-faq .reading-width"
+          ]
+        }
+      ],
+      "urlPattern": "/collections/*",
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Collection intro (breadcrumb, title, intro)",
+          "selector": [
+            ".container--breadcrumbs",
+            ".cc-rich-text:has(~ .cc-collection-list)",
+            "#main-content > div.container.container--breadcrumbs, #shopify-section-template--17768071233645__rich_text_3Pyj8y"
+          ],
+          "style": "centered",
+          "blocks": [],
+          "defaultContent": [
+            ".container--breadcrumbs .breadcrumbs-list",
+            ".cc-rich-text:has(~ .cc-collection-list) .section__block--heading",
+            ".cc-rich-text:has(~ .cc-collection-list) .section__block.rte"
+          ]
+        },
+        {
+          "id": "section-2",
+          "name": "Shop-by collection tiles",
+          "selector": [
+            ".cc-collection-list",
+            "#shopify-section-template--17768071233645__collection_list_9gEhfq"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-swatch"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "Product listing grid",
+          "selector": [
+            ".cc-collection-products",
+            "#shopify-section-template--17768071233645__collection-products"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-product"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "The Cambria Difference (cream band)",
+          "selector": [
+            ".cc-rich-text:has(+ .cc-icons-with-text)",
+            ".cc-icons-with-text",
+            "#shopify-section-template--17768071233645__rich_text_w6Cxxw, #shopify-section-template--17768071233645__icons_with_text_cUfzzz"
+          ],
+          "style": "cream, centered",
+          "blocks": [
+            "cards-icon"
+          ],
+          "defaultContent": [
+            ".cc-rich-text:has(+ .cc-icons-with-text) .section__block--heading",
+            ".cc-rich-text:has(+ .cc-icons-with-text) .section__block.rte"
+          ]
+        },
+        {
+          "id": "section-5",
+          "name": "How Do Cambria Quartz Surfaces Compare?",
+          "selector": [
+            ".cc-rich-text:has(+ .cc-multi-column)",
+            "#shopify-section-template--17768071233645__rich_text_VjFrk8, #shopify-section-template--17768071233645__multi_column_HPW7f7"
+          ],
+          "style": "centered",
+          "blocks": [
+            "cards-teaser"
+          ],
+          "defaultContent": [
+            ".cc-rich-text:has(+ .cc-multi-column) .section__block--heading",
+            ".cc-rich-text:has(+ .cc-multi-column) .section__block.rte"
+          ]
+        },
+        {
+          "id": "section-6",
+          "name": "Quartz pricing promo (cream band)",
+          "selector": [
+            ".cc-media-with-text",
+            "#shopify-section-template--17768071233645__media_with_text_dP8VnF"
+          ],
+          "style": "cream",
+          "blocks": [
+            "columns-teaser"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-7",
+          "name": "Quartz Countertop Resources",
+          "selector": [
+            ".cc-multi-column:has(.section__heading)",
+            "#shopify-section-template--17768071233645__multi_column_LJwAEA"
+          ],
+          "style": "centered",
+          "blocks": [
+            "cards-teaser"
+          ],
+          "defaultContent": [
+            ".cc-multi-column .section__heading"
+          ]
+        },
+        {
+          "id": "section-8",
+          "name": "Quartz Samples Store FAQs",
+          "selector": [
+            ".cc-rich-text:has(+ .cc-faq)",
+            ".cc-faq",
+            "#shopify-section-template--17768071233645__rich_text_LdVpwX, #shopify-section-template--17768071233645__faq_8GY3HV, #shopify-section-template--17768071233645__rich_text_HLzaWT"
+          ],
+          "style": "centered",
+          "blocks": [
+            "accordion-faq"
+          ],
+          "defaultContent": [
+            ".cc-rich-text:has(+ .cc-faq) .section__block--heading",
+            ".cc-rich-text:has(+ .cc-faq) .section__block.rte",
+            ".cc-faq + .cc-rich-text .section__block--buttons"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "home",
+      "urls": [
+        "https://www.cambriausa.com"
+      ],
+      "representativeUrl": "https://www.cambriausa.com",
+      "description": "Cambria USA home page: video hero, new-designs swatch grid, promo banner, inspiration category tiles, Cambria Difference carousel and planning-tool teasers",
+      "blocks": [
+        {
+          "name": "hero-video",
+          "instances": [
+            ".teaser-hero-video"
+          ]
+        },
+        {
+          "name": "cards-swatch",
+          "instances": [
+            ".cmp-experiencefragment--4-up"
+          ]
+        },
+        {
+          "name": "hero-gradient",
+          "instances": [
+            ".teaser-hero"
+          ]
+        },
+        {
+          "name": "cards-overlay",
+          "instances": [
+            ".teaser.cmp-teaser__hover-zoom"
+          ]
+        },
+        {
+          "name": "carousel-preview",
+          "instances": [
+            ".teaser-carousel-with-previews"
+          ]
+        },
+        {
+          "name": "cards-teaser",
+          "instances": [
+            ".cmp-container__flex-container"
+          ]
+        }
+      ],
+      "urlPattern": "/",
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero video banner",
+          "selector": [
+            ".cmp-container__full-width:has(.teaser-hero-video)",
+            "body > div.root.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > main.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.cmp-container__full-width.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(2)"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-video"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "New quartz designs",
+          "selector": [
+            "div.experiencefragment:has(> .cmp-experiencefragment--4-up)",
+            "body > div.root.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > main.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.experiencefragment.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(3)"
+          ],
+          "style": "centered",
+          "blocks": [
+            "cards-swatch"
+          ],
+          "defaultContent": [
+            ".cmp-experiencefragment--4-up .cmp-title",
+            ".cmp-experiencefragment--4-up .cmp-container__fixed-width > .cmp-container > div > .text .cmp-text",
+            ".cmp-experiencefragment--4-up .cmp-button"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "Cambria Style promo banner",
+          "selector": [
+            ".teaser-hero",
+            "body > div.root.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > main.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.teaser-hero.teaser.cmp-teaser-hero__overlay__black-left-gradient.cmp-teaser-hero__text-alignment__left.cmp-teaser-hero__font-color__white.cmp-teaser-hero__button-style__white-solid.cmp-teaser-hero__desktop-height__512px.cmp-teaser-hero__mobile-height__450px.aem-GridColumn.aem-GridColumn--default--12"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-gradient"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "Inspiration intro and category tiles",
+          "selector": [
+            ".cmp-container__fixed-width:has(+ .cmp-container__full-width .cmp-teaser__hover-zoom)",
+            "body > div.root.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > main.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.cmp-container__fixed-width.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(7)",
+            "body > div.root.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > main.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.cmp-container__full-width.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(8)",
+            "body > div.root.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > main.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.cmp-container__full-width.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(10)"
+          ],
+          "style": "centered",
+          "blocks": [
+            "cards-overlay"
+          ],
+          "defaultContent": [
+            ".cmp-container__fixed-width:has(+ .cmp-container__full-width .cmp-teaser__hover-zoom) .cmp-title",
+            ".cmp-container__fixed-width:has(+ .cmp-container__full-width .cmp-teaser__hover-zoom) .cmp-text",
+            ".cmp-container__fixed-width:has(+ .cmp-container__full-width .cmp-teaser__hover-zoom) .cmp-button"
+          ]
+        },
+        {
+          "id": "section-5",
+          "name": "The Cambria Difference",
+          "selector": [
+            ".cmp-container__fixed-width:has(.teaser-carousel-with-previews)",
+            "body > div.root.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > main.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.cmp-container__fixed-width.aem-GridColumn.aem-GridColumn--default--12:nth-of-type(11)"
+          ],
+          "style": "centered",
+          "blocks": [
+            "carousel-preview"
+          ],
+          "defaultContent": [
+            ".cmp-container__fixed-width:has(.teaser-carousel-with-previews) .cmp-title",
+            ".cmp-container__fixed-width:has(.teaser-carousel-with-previews) .cmp-text",
+            ".cmp-container__fixed-width:has(.teaser-carousel-with-previews) .cmp-button"
+          ]
+        },
+        {
+          "id": "section-6",
+          "name": "Planning tools teasers",
+          "selector": [
+            ".cmp-container__flex-container",
+            "body > div.root.container.responsivegrid > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > main.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.cmp-container > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.container.responsivegrid.cmp-container__fixed-width.cmp-container__flex-container.aem-GridColumn.aem-GridColumn--default--12"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-teaser"
+          ],
+          "defaultContent": []
+        }
+      ]
+    },
+    {
+      "name": "designs",
+      "urls": [
+        "https://www.cambriausa.com/quartz-countertops/quartz-colors/designs/quintessa"
+      ],
+      "representativeUrl": "https://www.cambriausa.com/quartz-countertops/quartz-colors/designs/quintessa",
+      "description": "To be named in naming step",
+      "blocks": [
+        {
+          "name": "carousel-gallery",
+          "instances": [
+            ".pdp-carousel"
+          ]
+        },
+        {
+          "name": "columns-moodboard",
+          "instances": [
+            ".cmp-moodboard__wrapper"
+          ]
+        },
+        {
+          "name": "cards-swatch",
+          "instances": [
+            ".cmp-similar-designs__cards-container"
+          ]
+        },
+        {
+          "name": "columns-teaser",
+          "instances": [
+            ".cmp-pdp-teaser-50-50"
+          ]
+        }
+      ],
+      "urlPattern": "/quartz-countertops/quartz-colors/designs/*",
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Product overview (breadcrumb, gallery, details)",
+          "selector": [
+            ".aem-authored-content-segment:has(> .cmp-container__fixed-width .cmp-button__secondary)",
+            ".aem-authored-content-segment:has(.pdp-carousel)",
+            "#root-search > div.pdp-container > div.pdp-subcontainer > div.aem-authored-content-segment:nth-of-type(1)",
+            "#root-search > div.pdp-container > div.pdp-subcontainer > div.aem-authored-content-segment:nth-of-type(2)"
+          ],
+          "style": "split",
+          "blocks": [
+            "carousel-gallery"
+          ],
+          "defaultContent": [
+            ".aem-authored-content-segment > .cmp-container__fixed-width .cmp-button__secondary",
+            ".pdp-wrapper__right .pdp-heading",
+            ".pdp-wrapper__right .pdp-details"
+          ]
+        },
+        {
+          "id": "section-2",
+          "name": "Moodboard",
+          "selector": [
+            ".aem-authored-content-segment:has(.cmp-moodboard)",
+            "#root-search > div.pdp-container > div.pdp-subcontainer > div.aem-authored-content-segment:nth-of-type(4)"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-moodboard"
+          ],
+          "defaultContent": [
+            ".cmp-moodboard__authored-title",
+            ".cmp-moodboard__authored-description",
+            ".cmp-moodboard__header-share-container .share-container"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "Benefits of Cambria",
+          "selector": [
+            ".aem-authored-content-segment:has(.numberedlist)",
+            "#root-search > div.pdp-container > div.pdp-subcontainer > div.aem-authored-content-segment:nth-of-type(5)"
+          ],
+          "style": "cream, centered",
+          "blocks": [],
+          "defaultContent": [
+            ".aem-authored-content-segment .cmp-title__gold",
+            ".aem-authored-content-segment .numberedlist"
+          ]
+        },
+        {
+          "id": "section-4",
+          "name": "Explore Similar Designs",
+          "selector": [
+            ".aem-authored-content-segment:has(.cmp-similar-designs)",
+            "#root-search > div.pdp-container > div.pdp-subcontainer > div.aem-authored-content-segment:nth-of-type(6)"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-swatch"
+          ],
+          "defaultContent": [
+            ".cmp-similar-designs__title",
+            ".cmp-similar-designs__description"
+          ]
+        },
+        {
+          "id": "section-5",
+          "name": "Experience Cambria in Person",
+          "selector": [
+            ".aem-authored-content-segment:has(.cmp-pdp-teaser-50-50)",
+            "#root-search > div.pdp-container > div.pdp-subcontainer > div.aem-authored-content-segment:nth-of-type(7)"
+          ],
+          "style": "cream",
+          "blocks": [
+            "columns-teaser"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-6",
+          "name": "Certification logos",
+          "selector": [
+            ".aem-authored-content-segment:has(.pdp-certifications)",
+            "#root-search > div.pdp-container > div.pdp-subcontainer > div.aem-authored-content-segment:nth-of-type(8)"
+          ],
+          "style": "centered",
+          "blocks": [],
+          "defaultContent": [
+            ".pdp-certifications"
+          ]
+        }
+      ]
+    }
+  ],
+  "metadata": {
+    "projectType": "da"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "variantName": "carousel-preview",
+  "baseBlock": "carousel",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "Feature-story carousel with neighbouring slides peeking in",
+    "description": "Center slide with neighbouring slides peeking at the sides; text, heading and button overlaid on the photo bottom-left; arrows and bar indicators"
+  },
+  "contentPattern": {
+    "structure": "image cell, then a content cell with heading, text and one CTA link",
+    "rationale": "Interactive rotating slides with arrows and indicators: Carousel. Source DOM duplicates the 4 slides for looping; only 4 unique slides are kept."
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Slide carousel where the current slide is centred and its neighbours peek in from the sides; heading, text and CTA sit over the photo bottom-left; prev/next arrows and bar indicators. One row per slide: image cell, content cell. Button labels come from the placeholders sheet (previousSlide, nextSlide, showSlide, of, carousel, slide, carouselSlideControls).",
+  "reuseGuidance": "Use for 3+ feature stories with photos. For a single static banner use hero-gradient.",
+  "sourceUrl": "https://www.cambriausa.com",
+  "blockContent": {
+    "description": "4-slide carousel: Performance Perfected, Superior Service, Family Owned American Made, Visionary Design; each image + H3 + text + CTA",
+    "structure": {
+      "source": "get_block_details /block-collection/carousel",
+      "rows": [
+        [
+          "Image (only)",
+          "Text: heading, description, CTA link"
+        ]
+      ],
+      "notes": "One row per slide; 4 slides."
+    }
+  }
+}

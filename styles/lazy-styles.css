@@ -1,176 +1,263 @@
 /* add global styles that can be loaded post LCP here */
 
-/* add global styles that can be loaded post LCP here */
-
 /* ==========================================================================
-  Scroll reveal – sections below fold animate in as they enter the viewport.
-  JS in scripts.js adds .will-reveal to off-screen sections, then .revealed
-  when they intersect. Only runs when prefers-reduced-motion allows it.
-  ========================================================================== */
-
-@media (prefers-reduced-motion: no-preference) {
-  :is(main, article.article-body) > .section.will-reveal:not(.revealed) {
-    opacity: 0;
-    transform: translateY(32px);
-    transition: opacity 0.8s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)),
-      transform 0.8s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1));
-  }
-
-  :is(main, article.article-body) > .section.will-reveal.revealed {
-    opacity: 1;
-    transform: none;
-    transition: opacity 0.8s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)),
-      transform 0.8s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1));
-  }
-
-  /* Stagger children inside revealed sections for cascading entrance */
-  :is(main, article.article-body) > .section.will-reveal.revealed > div > :is(h1, h2, h3, h4, p, .block, .button-container, picture) {
-    animation: content-enter 0.7s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)) both;
-  }
-
-  :is(main, article.article-body) > .section.will-reveal.revealed > div > :nth-child(1) { animation-delay: 0.05s; }
-  :is(main, article.article-body) > .section.will-reveal.revealed > div > :nth-child(2) { animation-delay: 0.1s; }
-  :is(main, article.article-body) > .section.will-reveal.revealed > div > :nth-child(3) { animation-delay: 0.15s; }
-  :is(main, article.article-body) > .section.will-reveal.revealed > div > :nth-child(4) { animation-delay: 0.2s; }
-  :is(main, article.article-body) > .section.will-reveal.revealed > div > :nth-child(5) { animation-delay: 0.25s; }
-  :is(main, article.article-body) > .section.will-reveal.revealed > div > :nth-child(6) { animation-delay: 0.3s; }
-
-  @keyframes content-enter {
-    from {
-      opacity: 0;
-      transform: translateY(16px);
-    }
-
-    to {
-      opacity: 1;
-      transform: none;
-    }
-  }
-}
-
-/* ==========================================================================
-  Post-LCP link transitions
+  Post-LCP link transitions (cambriausa.com uses 0.3s on links and buttons)
   ========================================================================== */
 
 a:any-link {
-  transition: color 0.25s, text-decoration-color 0.25s;
+  transition: color 0.3s, text-decoration-color 0.3s;
 }
 
 /* ==========================================================================
-  Blockquote and horizontal rule – editorial polish
+  Blockquote and horizontal rule
   ========================================================================== */
 
 :is(main, article.article-body) blockquote {
-  margin: var(--space-2xl, 48px) 0;
-  padding: var(--space-l) var(--space-xl);
-  border-left: 4px solid var(--color-gold);
-  background-color: light-dark(rgb(197 160 89 / 6%), rgb(197 160 89 / 8%));
-  border-radius: 0 8px 8px 0;
-  font-family: var(--font-family-serif);
-  font-size: var(--body-font-size-xl);
+  margin: var(--space-l) 0;
+  padding: 0 var(--space-l);
+  border-left: 2px solid var(--cambria-gold);
+  color: var(--copy-color);
+  font-size: var(--body-font-size-l);
   font-style: italic;
-  line-height: 1.55;
-  color: light-dark(var(--color-ink), var(--color-parchment));
-}
-
-:is(main, article.article-body) blockquote p {
-  margin: 0;
+  line-height: var(--body-line-height-l);
 }
 
 :is(main, article.article-body) hr {
-  border: none;
   height: 1px;
-  margin: var(--space-2xl, 48px) auto;
-  max-width: 120px;
-  background: var(--gradient-brand);
-  opacity: 0.6;
+  margin: var(--section-spacing) 0 0;
+  border: none;
+  background-color: var(--cambria-gray-line);
 }
 
 /* ==========================================================================
-  Section polish — non-critical enhancements
+  Below-the-fold default-content patterns (PDP moodboard, benefits list,
+  similar designs, certification logos)
   ========================================================================== */
 
-/* Highlighted/light sections get a subtle inner glow in dark mode */
-.dark-scheme :is(main, article.article-body) > .section.light,
-.dark-scheme :is(main, article.article-body) > .section.highlight,
-:root[data-theme='dark'] :is(main, article.article-body) > .section.light,
-:root[data-theme='dark'] :is(main, article.article-body) > .section.highlight {
-  box-shadow: inset 0 1px 0 rgb(197 160 89 / 10%), inset 0 -1px 0 rgb(197 160 89 / 10%);
+/* section-scoped pattern rules below are grouped by pattern, not by specificity */
+/* stylelint-disable no-descending-specificity */
+
+/* logo row: a centered section made only of image paragraphs (certifications) */
+main > .section.centered > .default-content-wrapper:has(> p:first-child > picture:only-child):has(> p:last-child > picture:only-child):not(:has(> :not(p), > .button-container)) {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 60px 16px;
+  max-width: none;
+  padding: 0 0 20px;
 }
 
-/* Divider sections: slightly larger padding for visual breathing room */
-@media (width >= 900px) {
-  :is(main, article.article-body) > .section.divider {
-    padding-block: calc(var(--space-xl) * 1.5);
-  }
-
-  :is(main, article.article-body) > .section.divider:first-child {
-    padding-block-start: 0;
-  }
+main > .section.centered > .default-content-wrapper:has(> p:first-child > picture:only-child):has(> p:last-child > picture:only-child):not(:has(> :not(p), > .button-container)) > p {
+  flex: 0 0 117px;
+  max-width: none;
+  margin: 0;
 }
 
-/* H2 accent — thin brand-gradient bar beneath h2 in plain content sections */
-:is(main, article.article-body) > .section:not(.hero-container, .gradient, .ink, .rust) h2::after {
-  content: '';
+main > .section.centered > .default-content-wrapper:has(> p:first-child > picture:only-child):has(> p:last-child > picture:only-child):not(:has(> :not(p), > .button-container)) img {
   display: block;
-  width: 2.5rem;
-  height: 2px;
-  margin-top: 0.35em;
-  background: var(--gradient-brand);
-  border-radius: 1px;
+  width: 100%;
+  height: 46px;
+  aspect-ratio: auto;
+  object-fit: contain;
 }
 
-:is(main, article.article-body) > .section.center:not(.hero-container, .gradient, .ink, .rust) h2::after {
-  margin-inline: auto;
+@media (width >= 900px) {
+  main > .section.centered > .default-content-wrapper:has(> p:first-child > picture:only-child):has(> p:last-child > picture:only-child):not(:has(> :not(p), > .button-container)) {
+    flex-wrap: nowrap;
+    gap: 0;
+  }
+
+  main > .section.centered > .default-content-wrapper:has(> p:first-child > picture:only-child):has(> p:last-child > picture:only-child):not(:has(> :not(p), > .button-container)) > p {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  main > .section.centered > .default-content-wrapper:has(> p:first-child > picture:only-child):has(> p:last-child > picture:only-child):not(:has(> :not(p), > .button-container)) img {
+    height: 70px;
+  }
 }
+
+/* --- moodboard section: title + intro left, share row right --- */
+main > .section.columns-moodboard-container > .default-content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  margin-bottom: 22px;
+}
+
+main > .section.columns-moodboard-container > .default-content-wrapper > * {
+  flex: 0 0 100%;
+  order: 2;
+  min-width: 0;
+  margin: 0;
+}
+
+main > .section.columns-moodboard-container > .default-content-wrapper > h3 {
+  color: var(--cambria-black);
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 25px;
+}
+
+main > .section.columns-moodboard-container > .default-content-wrapper > h3 + p {
+  margin-top: 8px;
+  color: var(--cambria-gray-text);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+/* share label + share link */
+main > .section.columns-moodboard-container > .default-content-wrapper > h3 + p ~ p {
+  flex: 0 1 auto;
+  order: 1;
+  margin-bottom: 30px;
+  color: var(--cambria-gray-text);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+main > .section.columns-moodboard-container > .default-content-wrapper > h3 + p + p {
+  margin-inline-end: 18px;
+}
+
+main > .section.columns-moodboard-container > .default-content-wrapper > h3 + p + p ~ p {
+  max-width: 160px;
+  overflow: hidden;
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (width >= 900px) {
+  main > .section.columns-moodboard-container > .default-content-wrapper {
+    display: grid;
+    grid-template-columns: minmax(0, 60%) 1fr auto minmax(0, 160px);
+    align-items: start;
+  }
+
+  main > .section.columns-moodboard-container > .default-content-wrapper > :is(h3, h3 + p) {
+    grid-column: 1;
+  }
+
+  main > .section.columns-moodboard-container > .default-content-wrapper > h3 {
+    font-size: 28px;
+    line-height: 30px;
+  }
+
+  main > .section.columns-moodboard-container > .default-content-wrapper > h3 + p ~ p {
+    grid-row: 1 / span 2;
+    grid-column: 3;
+    margin: 14px 0 0;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  main > .section.columns-moodboard-container > .default-content-wrapper > h3 + p + p {
+    margin-inline-end: 18px;
+  }
+
+  main > .section.columns-moodboard-container > .default-content-wrapper > h3 + p + p ~ p {
+    grid-column: 4;
+    font-size: 14px;
+  }
+}
+
+/* --- numbered list: cream + centered section of number/text paragraph pairs --- */
+main > .section.cream.centered > .default-content-wrapper:only-child:not(:has(picture, .button-container, ul, ol)) {
+  display: grid;
+  grid-template-columns: 50px minmax(0, 272px);
+  justify-content: center;
+  align-items: center;
+  row-gap: 16px;
+}
+
+main > .section.cream.centered > .default-content-wrapper:only-child:not(:has(picture, .button-container, ul, ol)) > :is(h1, h2, h3) {
+  grid-column: 1 / -1;
+  margin-bottom: 12px;
+}
+
+main > .section.cream.centered > .default-content-wrapper:only-child:not(:has(picture, .button-container, ul, ol)) > p {
+  max-width: none;
+  margin: 0;
+}
+
+/* odd paragraphs: numerals with a gold rule */
+main > .section.cream.centered > .default-content-wrapper:only-child:not(:has(picture, .button-container, ul, ol)) > p:nth-of-type(odd) {
+  box-sizing: content-box;
+  width: 48px;
+  border-inline-end: 2px solid var(--cambria-gold);
+  color: var(--cambria-gold);
+  font-family: var(--accent-font-family);
+  font-size: 50px;
+  font-weight: 300;
+  line-height: 66px;
+  text-align: center;
+}
+
+/* even paragraphs: item text */
+main > .section.cream.centered > .default-content-wrapper:only-child:not(:has(picture, .button-container, ul, ol)) > p:nth-of-type(even) {
+  margin-inline-start: 16px;
+  color: var(--copy-color);
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 300;
+  line-height: 28px;
+  letter-spacing: -0.208px;
+  text-align: start;
+}
+
+@media (width >= 1200px) {
+  main > .section.cream.centered > .default-content-wrapper:only-child:not(:has(picture, .button-container, ul, ol)) {
+    grid-template-columns: 82px minmax(0, 368fr) 82px minmax(0, 368fr) 82px minmax(0, 316fr);
+    max-width: 1338px;
+    padding-inline: 20px;
+  }
+
+  main > .section.cream.centered > .default-content-wrapper:only-child:not(:has(picture, .button-container, ul, ol)) > :is(h1, h2, h3) {
+    margin-bottom: 4px;
+  }
+
+  main > .section.cream.centered > .default-content-wrapper:only-child:not(:has(picture, .button-container, ul, ol)) > p:nth-of-type(odd) {
+    width: 80px;
+    font-size: 72px;
+  }
+
+  main > .section.cream.centered > .default-content-wrapper:only-child:not(:has(picture, .button-container, ul, ol)) > p:nth-of-type(even) {
+    font-size: 20px;
+  }
+
+  main > .section.cream.centered > .default-content-wrapper:only-child:not(:has(picture, .button-container, ul, ol)) > p:nth-of-type(even):not(:nth-of-type(6n)) {
+    margin-inline-end: 52px;
+  }
+}
+
+/* --- similar designs: left-aligned title + intro above the swatch cards --- */
+main > .section.cards-swatch-container:not(.centered) > .default-content-wrapper {
+  margin-bottom: 20px;
+}
+
+main > .section.cards-swatch-container:not(.centered) > .default-content-wrapper > :is(h2, h3) {
+  margin-bottom: 8px;
+}
+
+main > .section.cards-swatch-container:not(.centered) > .default-content-wrapper > p {
+  color: var(--cambria-gray-text);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@media (width >= 900px) {
+  main > .section.cards-swatch-container:not(.centered) > .default-content-wrapper > :is(h2, h3) {
+    margin-bottom: 0;
+  }
+}
+
+/* stylelint-enable no-descending-specificity */
 
 /* ==========================================================================
-  Header scroll shadow — appears after user scrolls past hero
+  Code blocks (shared utility decorated by scripts.js)
   ========================================================================== */
-
-header .nav-wrapper.scrolled {
-  box-shadow: 0 4px 24px rgb(0 0 0 / 10%);
-}
-
-.dark-scheme header .nav-wrapper.scrolled,
-:root[data-theme='dark'] header .nav-wrapper.scrolled {
-  box-shadow: 0 4px 24px rgb(0 0 0 / 35%);
-}
-
-/* ==========================================================================
-  Teaser block — enhanced dark mode glow
-  ========================================================================== */
-
-.dark-scheme main .teaser,
-:root[data-theme='dark'] main .teaser {
-  box-shadow: 0 0 0 1px rgb(197 160 89 / 12%), 0 8px 32px rgb(0 0 0 / 25%);
-}
-
-/* ==========================================================================
-  Global image hover – subtle scale on linked images
-  ========================================================================== */
-
-:is(main, article.article-body) a picture img {
-  transition: transform 0.55s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1)),
-    filter 0.55s var(--ease-out-expo, cubic-bezier(0.16, 1, 0.3, 1));
-}
-
-:is(main, article.article-body) a:hover picture img {
-  transform: scale(1.04);
-  filter: brightness(1.04);
-}
-
-/* Inline images get subtle rounded corners for a polished look */
-:is(main, article.article-body) > .section > div > p > picture img {
-  border-radius: 8px;
-}
-
-/* Focus-visible on all interactive elements: consistent brand ring */
-:is(main, article.article-body) :is(a, button, input, select, textarea, [tabindex]):focus-visible {
-  outline: 2px solid var(--color-gold);
-  outline-offset: 3px;
-  border-radius: 2px;
-}
 
 .code-block {
   position: relative;
@@ -178,15 +265,9 @@ header .nav-wrapper.scrolled {
 
 .code-block > pre {
   padding-right: calc(var(--space-l) + 90px);
-  background-color: light-dark(
-    color-mix(in srgb, var(--text-color, #1a1a2e) 8%, var(--light-color, #fff)),
-    var(--light-color, #1c1c2c)
-  );
-  border: 1px solid light-dark(
-    color-mix(in srgb, var(--text-color, #1a1a2e) 14%, transparent),
-    rgb(255 255 255 / 8%)
-  );
-  color: light-dark(var(--color-ink, #1a1a2e), var(--color-parchment, #f6f1e7));
+  border: 1px solid var(--cambria-gray-line);
+  background-color: var(--light-color);
+  color: var(--cambria-black);
 }
 
 .code-block > pre code {
@@ -198,11 +279,8 @@ header .nav-wrapper.scrolled {
   display: inline;
   padding: 0.15em 0.4em;
   border-radius: 4px;
-  background: light-dark(
-    color-mix(in srgb, var(--text-color, #1a1a2e) 8%, transparent),
-    rgb(255 255 255 / 10%)
-  );
-  color: var(--color-rust);
+  background: var(--light-color);
+  color: var(--cambria-black);
   -webkit-text-fill-color: currentcolor;
   font-size: 0.9em;
   font-weight: 600;
@@ -222,11 +300,11 @@ header .nav-wrapper.scrolled {
   align-items: center;
   gap: 6px;
   padding: 6px 10px;
-  border: 1px solid light-dark(rgb(0 0 0 / 10%), rgb(255 255 255 / 15%));
+  border: 1px solid var(--cambria-gray-line);
   border-radius: 6px;
-  background: light-dark(rgb(255 255 255 / 70%), rgb(0 0 0 / 30%));
+  background: rgb(255 255 255 / 70%);
   backdrop-filter: blur(6px);
-  color: light-dark(var(--color-ink, #111), var(--color-parchment, #fff));
+  color: var(--cambria-black);
   -webkit-text-fill-color: currentcolor;
   font-family: var(--body-font-family);
   font-size: 0.8125rem;
@@ -243,8 +321,8 @@ header .nav-wrapper.scrolled {
 
 .code-block-copy:hover {
   opacity: 1;
-  background: light-dark(rgb(255 255 255 / 95%), rgb(0 0 0 / 55%));
-  border-color: light-dark(rgb(0 0 0 / 18%), rgb(255 255 255 / 25%));
+  background: rgb(255 255 255 / 95%);
+  border-color: var(--cambria-gray-text);
 }
 
 .code-block:hover .code-block-copy {
@@ -272,7 +350,7 @@ header .nav-wrapper.scrolled {
 }
 
 .code-block-copy.is-copied {
-  color: light-dark(var(--color-green-500), var(--color-green-400));
+  color: var(--color-green-500);
   border-color: currentcolor;
   opacity: 1;
 }

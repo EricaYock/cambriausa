@@ -1,0 +1,33 @@
+{
+  "variantName": "hero-video",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "Top-of-page banner over a muted, looping background video",
+    "description": "Full-bleed autoplay background video with poster and pause control, left-aligned white text and two solid buttons"
+  },
+  "contentPattern": {
+    "structure": "Row 1: poster image and a link to the video file (.mp4/.webm). Row 2: optional logo image, heading, optional text, one or two CTA links",
+    "rationale": "Full-bleed video/photo background with overlaid heading and CTAs is a hero; the background media belongs to the block, so the section is not colored."
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Top-of-page banner with a muted, looping background video (poster image shown first), optional logo image above the heading, a heading and up to two CTA buttons. Row 1: poster image and a link to the .mp4/.webm file. Row 2: logo image, heading, text, links.",
+  "reuseGuidance": "Use when the banner background is a video. For a still photo with a dark gradient use hero-gradient.",
+  "sourceUrl": "https://www.cambriausa.com",
+  "blockContent": {
+    "description": "Background video with poster, FOAM logo image, H1, two CTA links",
+    "structure": {
+      "source": "get_block_details /block-collection/hero",
+      "rows": [
+        [
+          "Background image or video link (with poster image)"
+        ],
+        [
+          "Optional eyebrow/logo image, heading, subheading paragraph, CTA links"
+        ]
+      ],
+      "notes": "Section 1 puts the poster image plus a link to https://www.cambriausa.com/content/dam/cusa/videos/launch-videos/ndl-summer-26/ndl-q3-2026-cusa-homepage-carousel-720p.mp4 in row 1; FOAM logo image above the H1 in row 2. Keep \"Introducing NEW Cambria Quartz Surfaces\" as H1 and \"More to See, More to Savor\" as H2."
+    }
+  }
+}

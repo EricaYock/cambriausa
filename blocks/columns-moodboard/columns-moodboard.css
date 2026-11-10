@@ -1,0 +1,286 @@
+.columns-moodboard {
+  --columns-moodboard-gap: 12px;
+  --columns-moodboard-border: 1px solid rgb(0 0 0 / 25%);
+}
+
+/* Mobile: paints first, then slabs, then hardware (source order) */
+.columns-moodboard .columns-moodboard-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.columns-moodboard .columns-moodboard-cell {
+  min-width: 0;
+}
+
+.columns-moodboard .columns-moodboard-side {
+  display: contents;
+}
+
+.columns-moodboard figcaption > *,
+.columns-moodboard .columns-moodboard-swatch-label > * {
+  margin: 0;
+}
+
+/* Slab tiles: lead image full width, detail images side by side */
+.columns-moodboard .columns-moodboard-lead {
+  margin-top: 30px;
+}
+
+.columns-moodboard .columns-moodboard-tiles {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--columns-moodboard-gap);
+}
+
+.columns-moodboard .columns-moodboard-tiles-1 {
+  grid-template-columns: 1fr;
+}
+
+.columns-moodboard .columns-moodboard-tile {
+  position: relative;
+  margin: 0;
+}
+
+.columns-moodboard .columns-moodboard-tile.is-lead {
+  grid-column: 1 / -1;
+}
+
+.columns-moodboard .columns-moodboard-tile-media a,
+.columns-moodboard .columns-moodboard-tile-media picture {
+  display: block;
+}
+
+.columns-moodboard .columns-moodboard-lead .columns-moodboard-tile-media img {
+  display: block;
+  width: 100%;
+  height: 210px;
+  aspect-ratio: auto;
+  object-fit: cover;
+}
+
+.columns-moodboard .is-lead .columns-moodboard-tile-media img {
+  height: auto;
+  max-height: 400px;
+}
+
+.columns-moodboard .columns-moodboard-lead figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  text-align: center;
+  pointer-events: none;
+}
+
+.columns-moodboard .columns-moodboard-lead figcaption p {
+  display: inline-block;
+  padding: 2px 8px;
+  background-color: #fff;
+  color: var(--cambria-gray-copy);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-transform: uppercase;
+  opacity: 0.8;
+  pointer-events: auto;
+}
+
+.columns-moodboard .columns-moodboard-lead figcaption a:any-link {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+.columns-moodboard .columns-moodboard-lead .columns-moodboard-tile:hover figcaption p {
+  color: #000;
+  opacity: 1;
+}
+
+/* Paint swatches */
+.columns-moodboard .columns-moodboard-swatches {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  align-items: start;
+  order: -1;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.columns-moodboard .columns-moodboard-swatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.columns-moodboard .columns-moodboard-swatch-chip {
+  display: block;
+  width: 100%;
+  max-width: 140px;
+  aspect-ratio: 1;
+  margin-bottom: 10px;
+  border-radius: 50%;
+}
+
+.columns-moodboard .columns-moodboard-swatch-label {
+  color: var(--cambria-gray-text);
+  font-size: 14px;
+  line-height: 21px;
+}
+
+.columns-moodboard .columns-moodboard-swatch-label strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+.columns-moodboard .columns-moodboard-swatch-label br {
+  display: none;
+}
+
+.columns-moodboard .columns-moodboard-swatch-code {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Hardware tiles */
+.columns-moodboard .columns-moodboard-side .columns-moodboard-tiles {
+  margin-top: var(--columns-moodboard-gap);
+}
+
+.columns-moodboard .columns-moodboard-side .columns-moodboard-tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px 20px 8px;
+  border: var(--columns-moodboard-border);
+  background-color: #fff;
+}
+
+.columns-moodboard .columns-moodboard-side .columns-moodboard-tile-media img {
+  display: block;
+  width: auto;
+  max-height: 116px;
+  margin: 0 auto;
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+.columns-moodboard .columns-moodboard-side figcaption {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 166px;
+  margin: 13px auto 0;
+  color: var(--cambria-gray-text);
+  font-size: 14px;
+  line-height: 21px;
+  text-align: center;
+}
+
+@media (width >= 900px) {
+  /* 5-column mosaic: slabs span 3 columns and both rows, paints and hardware stack in the last 2 */
+  .columns-moodboard .columns-moodboard-row {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .columns-moodboard .columns-moodboard-lead {
+    grid-area: 1 / 1 / 3 / 4;
+    margin: 0 12px 0 0;
+  }
+
+  .columns-moodboard .is-lead .columns-moodboard-tile-media img {
+    max-height: 391px;
+  }
+
+  .columns-moodboard .columns-moodboard-lead figcaption p {
+    padding: 4px 16px;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  .columns-moodboard .columns-moodboard-swatches {
+    grid-area: 1 / 4 / 2 / 6;
+    grid-template-columns: none;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+    gap: 0;
+    align-items: stretch;
+    border: var(--columns-moodboard-border);
+    border-bottom: 0;
+  }
+
+  .columns-moodboard .columns-moodboard-swatch {
+    display: grid;
+    grid-template-rows: 3fr 2fr;
+    justify-items: center;
+    padding: 0 4px;
+  }
+
+  .columns-moodboard .columns-moodboard-swatch-chip {
+    align-self: end;
+    max-width: 107px;
+  }
+
+  .columns-moodboard .columns-moodboard-swatch-label {
+    align-self: start;
+  }
+
+  .columns-moodboard .columns-moodboard-swatch-label,
+  .columns-moodboard .columns-moodboard-swatch-label strong {
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .columns-moodboard .columns-moodboard-side .columns-moodboard-tiles {
+    display: flex;
+    grid-area: 2 / 4 / 3 / 6;
+    gap: 0;
+    margin-top: 0;
+    border: var(--columns-moodboard-border);
+  }
+
+  .columns-moodboard .columns-moodboard-side .columns-moodboard-tile {
+    flex: 1 1 0;
+    padding: 0;
+    border: 0;
+  }
+
+  .columns-moodboard .columns-moodboard-side .columns-moodboard-tile + .columns-moodboard-tile {
+    border-left: var(--columns-moodboard-border);
+  }
+
+  .columns-moodboard .columns-moodboard-side .columns-moodboard-tile-media img {
+    max-height: 160px;
+    margin-top: 30px;
+  }
+
+  .columns-moodboard .columns-moodboard-side figcaption {
+    max-width: none;
+    margin: 20px auto;
+    padding: 0 25px;
+    font-size: 13px;
+    line-height: 19.5px;
+  }
+}
+
+@media (width >= 1200px) {
+  .columns-moodboard .columns-moodboard-swatch-label {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .columns-moodboard .columns-moodboard-swatch-label strong {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

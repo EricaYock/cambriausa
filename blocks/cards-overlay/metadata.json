@@ -1,0 +1,31 @@
+{
+  "variantName": "cards-overlay",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "Large clickable category tiles with the title overlaid on the photo",
+    "description": "Stacked full-bleed 552px image tiles; whole tile is a link with an uppercase white title and chevron overlaid bottom-left, hover zoom"
+  },
+  "contentPattern": {
+    "structure": "image cell, then a cell with a heading or paragraph containing the title link",
+    "rationale": "Repeating look-alike items each linking to a page; same structure repeated, so Cards (image + title link) rather than two separate heroes."
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Stacked full-width image tiles, each fully clickable, with the title and a chevron overlaid bottom-left. One row per tile: image cell, and a cell with a heading or paragraph containing the link.",
+  "reuseGuidance": "Use for large category entry points (e.g. Kitchens & Baths). For small grids use cards-swatch.",
+  "sourceUrl": "https://www.cambriausa.com",
+  "blockContent": {
+    "description": "Two look-alike full-width image tiles (Kitchens & Baths, Unique Installs) with overlaid title linking to a category page",
+    "structure": {
+      "source": "get_block_details /block-collection/cards",
+      "rows": [
+        [
+          "Image",
+          "Text: optional heading, description, CTA link"
+        ]
+      ],
+      "notes": "One row per card. Section 2: image + linked design name paragraph. Section 4: image + H3 linked title. Section 6: image + H3 + paragraph + link."
+    }
+  }
+}

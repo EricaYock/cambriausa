@@ -1,0 +1,163 @@
+/* full-bleed tiles: drop the section content max-width / gutters */
+main > .section > .cards-overlay-wrapper {
+  max-width: none;
+  padding: 0;
+}
+
+.cards-overlay {
+  margin-top: 30px;
+}
+
+.cards-overlay > ul {
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cards-overlay .cards-overlay-card {
+  position: relative;
+  display: grid;
+  color: #fff;
+}
+
+/* image and title share one grid cell; the title sits on top of the photo */
+.cards-overlay .cards-overlay-card > * {
+  grid-area: 1 / 1;
+}
+
+.cards-overlay .cards-overlay-card-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.cards-overlay .cards-overlay-card-image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(359deg, rgb(3 0 0 / 50%) 3.62%, rgb(3 0 0 / 0%) 19.21%, rgb(3 0 0 / 0%) 46.72%);
+  opacity: 0.7;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.cards-overlay .cards-overlay-card-image picture {
+  display: block;
+}
+
+.cards-overlay .cards-overlay-card-image img {
+  display: block;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform 3.4s;
+}
+
+.cards-overlay .cards-overlay-card-body {
+  z-index: 1;
+  place-self: end center;
+  box-sizing: border-box;
+  max-width: 100%;
+  margin-bottom: 8px;
+  padding: 0 20px;
+  transform: translateY(-50%);
+}
+
+.cards-overlay .cards-overlay-card-body > * {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  border-bottom: 2px solid transparent;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 28px;
+  text-transform: uppercase;
+}
+
+.cards-overlay .cards-overlay-card-link:any-link {
+  display: inline-flex;
+  align-items: center;
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+.cards-overlay .cards-overlay-card-chevron {
+  flex: none;
+  width: 1em;
+  height: 1em;
+  padding-inline-start: 0.25rem;
+  background: currentcolor;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z'/%3E%3C/svg%3E") right center / 1em 1em no-repeat content-box;
+}
+
+/* stretch the title link over the whole tile */
+.cards-overlay .cards-overlay-card-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.cards-overlay .cards-overlay-card:hover .cards-overlay-card-image img,
+.cards-overlay .cards-overlay-card:focus-within .cards-overlay-card-image img {
+  transform: scale(1.08);
+}
+
+.cards-overlay .cards-overlay-card:hover .cards-overlay-card-body > *,
+.cards-overlay .cards-overlay-card:focus-within .cards-overlay-card-body > * {
+  border-bottom-color: #fff;
+}
+
+.cards-overlay .cards-overlay-card:has(.cards-overlay-card-link:focus-visible) {
+  outline: 2px solid #fff;
+  outline-offset: -4px;
+}
+
+.cards-overlay .cards-overlay-card.no-image {
+  color: inherit;
+}
+
+.cards-overlay .cards-overlay-card.no-image .cards-overlay-card-body {
+  transform: none;
+}
+
+.cards-overlay .cards-overlay-card.no-image .cards-overlay-card-body > * {
+  color: inherit;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cards-overlay .cards-overlay-card-image img {
+    transition: none;
+  }
+}
+
+@media (width >= 600px) {
+  .cards-overlay .cards-overlay-card-body > * {
+    font-size: 28px;
+    line-height: 34px;
+  }
+}
+
+@media (width >= 900px) {
+  .cards-overlay .cards-overlay-card-image img {
+    height: auto;
+    aspect-ratio: 64 / 27;
+  }
+
+  .cards-overlay .cards-overlay-card-body {
+    justify-self: start;
+    margin: 0 6px 40px calc(5% - 5px);
+    padding: 0;
+    transform: none;
+  }
+
+  .cards-overlay .cards-overlay-card-body > * {
+    display: inline-flex;
+    font-size: 35px;
+    font-weight: 300;
+    line-height: 42px;
+  }
+}

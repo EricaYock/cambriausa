@@ -1,0 +1,25 @@
+{
+  "variantName": "accordion-faq",
+  "baseBlock": "accordion",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "Collapsible frequently asked questions",
+    "description": "Stacked questions separated by thin dividers, each with a chevron toggle on the right; answers collapsed by default and revealed on click"
+  },
+  "contentPattern": {
+    "structure": "one row per item: question cell (plain text), answer cell (paragraphs, links, lists)",
+    "rationale": "Interactive collapsible Q&A: Accordion. Built on native details/summary for keyboard and screen-reader support."
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": {
+    "pagesUsing": [
+      "/collections/samples"
+    ],
+    "reuseCount": 0,
+    "lastUsed": "2026-11-09T18:27:51.000Z"
+  },
+  "reuseGuidance": "Use for authored question/answer lists. The project faq block is for FAQs pulled from /faq-index.json, not authored rows.",
+  "sourceUrl": "https://shop.cambriausa.com/collections/samples",
+  "usageDescription": "FAQ accordion. One row per item: question in the first cell (plain text, not a heading), answer in the second cell. All items start collapsed and open independently."
+}

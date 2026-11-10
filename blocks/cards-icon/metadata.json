@@ -1,0 +1,25 @@
+{
+  "variantName": "cards-icon",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "Short value points, each with a small icon",
+    "description": "Compact horizontal items: a small icon/numeral image on the left, an uppercase label and a one-line description on the right; 4 in a row on desktop, 2 on tablet, stacked on mobile"
+  },
+  "contentPattern": {
+    "structure": "one row per item: icon image cell, then a text cell with a bold label paragraph and a description paragraph",
+    "rationale": "Four look-alike items (icon + label + description) side by side: Cards."
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": {
+    "pagesUsing": [
+      "/collections/samples"
+    ],
+    "reuseCount": 0,
+    "lastUsed": "2026-11-09T18:27:51.000Z"
+  },
+  "reuseGuidance": "Use for lists of short value propositions or features with a small icon beside each. Use cards-teaser when each item has a large image, heading and CTA.",
+  "sourceUrl": "https://shop.cambriausa.com/collections/samples",
+  "usageDescription": "Row of small icon items (4-up desktop, 2-up tablet, stacked mobile). One row per item: icon image cell; text cell with the label as a bold paragraph (rendered uppercase) and a short description paragraph."
+}

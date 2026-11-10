@@ -1,0 +1,159 @@
+/* cards-icon: icon + short text items in a horizontal snap slider
+ * (1 per view mobile, 2 >= 600, 3 >= 900, 4 >= 1200 where all items fit) */
+
+.cards-icon {
+  position: relative;
+  margin-top: 65px;
+  color: var(--cambria-gray-copy);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.cards-icon > ul {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.cards-icon > ul::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cards-icon > ul {
+    scroll-behavior: smooth;
+  }
+}
+
+.cards-icon .cards-icon-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 40px;
+  text-align: start;
+  scroll-snap-align: start;
+}
+
+.cards-icon .cards-icon-card-icon {
+  flex: 0 0 48px;
+  width: 48px;
+}
+
+.cards-icon .cards-icon-card-icon picture,
+.cards-icon .cards-icon-card-icon img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* icons keep their natural ratio (source 48x58), not the global 16:9 placeholder */
+.cards-icon .cards-icon-card-icon img {
+  aspect-ratio: auto;
+  object-fit: contain;
+}
+
+.cards-icon .cards-icon-card-body {
+  flex: 0 1 auto;
+  min-width: 0;
+  margin-left: 20px;
+}
+
+.cards-icon .cards-icon-card-body > * {
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+
+.cards-icon .cards-icon-card-label,
+.cards-icon .cards-icon-card-label strong {
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+/* prev / next controls (shown by JS only when the items overflow) */
+.cards-icon .cards-icon-nav[hidden] {
+  display: none;
+}
+
+.cards-icon .cards-icon-nav button {
+  position: absolute;
+  top: 0;
+  width: 24px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--cambria-gray-copy);
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.cards-icon .cards-icon-nav .cards-icon-prev {
+  left: calc(-1 * var(--content-padding-inline));
+}
+
+.cards-icon .cards-icon-nav .cards-icon-next {
+  right: calc(-1 * var(--content-padding-inline));
+}
+
+.cards-icon .cards-icon-nav button::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  transform: translateY(-50%);
+  background-color: currentcolor;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m9.693 4.5 7.5 7.5-7.5 7.5' stroke='%23000' stroke-width='1.5' fill='none'/%3E%3C/svg%3E") center / 24px 24px no-repeat;
+}
+
+.cards-icon .cards-icon-nav .cards-icon-prev::before {
+  transform: translateY(-50%) scaleX(-1);
+}
+
+.cards-icon .cards-icon-nav button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.cards-icon .cards-icon-nav button:focus-visible {
+  outline: 2px solid var(--cambria-focus);
+  outline-offset: -2px;
+}
+
+@media (width >= 600px) {
+  .cards-icon > ul {
+    grid-auto-columns: calc((100% - 32px) / 2);
+    gap: 32px;
+  }
+
+  .cards-icon .cards-icon-card {
+    padding: 0;
+  }
+}
+
+@media (width >= 900px) {
+  .cards-icon > ul {
+    grid-auto-columns: calc((100% - 64px) / 3);
+  }
+}
+
+@media (width >= 1200px) {
+  .cards-icon {
+    margin-top: 71px;
+  }
+
+  .cards-icon > ul {
+    grid-auto-columns: calc((100% - 96px) / 4);
+  }
+}

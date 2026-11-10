@@ -1,3 +1,5 @@
+@import url('brand.css');
+
 /*
  * Copyright 2020 Adobe. All rights reserved.
  * This file is licensed to you under the Apache License, Version 2.0 (the "License");
@@ -11,22 +13,24 @@
  */
 
 /* ==========================================================================
-   Design tokens – use these variables across blocks for consistent styling.
+   Design tokens – Cambria brand values live in brand.css; the tokens below
+   keep the names used across the project and map them to the brand.
    ========================================================================== */
 
 :root,
 :host {
+  /* Cambria is a light-only design */
+  color-scheme: light;
+
   /* mobile-first breakpoints */
   --bp-tablet: 600px;
   --bp-desktop: 900px;
   --bp-wide: 1200px;
 
   /* grid */
-  --grid-container-width: 83.4%;
-  --grid-column-width: calc(var(--grid-container-width) / 12);
-  --grid-gutter-width: 8.3%;
+  --grid-container-width: var(--content-max-width);
 
-  /* spacing scale for consistent global layout */
+  /* spacing scale */
   --space-xs: 4px;
   --space-s: 8px;
   --space-m: 16px;
@@ -35,28 +39,28 @@
   --space-2xl: 48px;
   --space-3xl: 64px;
   --space-4xl: 96px;
-
-  /* global layout rhythm */
-  --content-padding-inline: var(--space-m);
   --main-block-space: var(--space-l);
-  --section-block-space: var(--space-l);
+  --section-block-space: var(--section-spacing);
 
-  /* color scheme */
-  color-scheme: light dark;
+  /* named palette – mapped to Cambria brand colors */
+  --color-light: var(--cambria-white);
+  --color-dark: var(--cambria-black);
+  --color-gold: var(--cambria-gold);
+  --color-rust: var(--cambria-gold);
+  --color-rust-bright: var(--cambria-gold-bright);
+  --color-parchment: var(--cambria-cream);
+  --color-ink: var(--cambria-black);
+  --color-obsidian: var(--cambria-black);
+  --color-card-dark: var(--cambria-black);
+  --color-muted: var(--cambria-gray-text);
+  --color-text: var(--text-color);
+  --color-link: var(--link-color);
+  --color-link-hover: var(--link-hover-color);
+  --color-brand: var(--cambria-gold);
+  --color-accent: var(--cambria-gold);
+  --color-shaded: var(--cambria-cream);
 
-  /* heritage palette */
-  --color-rust: #a14f2b;
-  --color-gold: #c5a059;
-  --color-parchment: #f5f2ed;
-  --color-ink: #1a1a1a;
-
-  /* heritage dark palette */
-  --color-obsidian: #060d0d;
-  --color-card-dark: #162121;
-  --color-rust-bright: #d16a3e;
-  --color-muted: #8b9a9a;
-
-  /* color tokens – grays and palette */
+  /* grays and utility palette (used by shared/legacy blocks) */
   --color-gray-100: #f1f1f1;
   --color-gray-200: #d3d3d3;
   --color-gray-300: #b5b5b5;
@@ -72,198 +76,64 @@
   --color-green-400: #24b032;
   --color-green-500: #1e9029;
   --color-green-600: #187220;
-  --color-teal-100: #e4f3f5;
-  --color-teal-200: #acdbdf;
-  --color-teal-300: #71c1c9;
-  --color-teal-400: #36a7b3;
-  --color-teal-500: #108a96;
-  --color-blue-100: #eaf2ff;
-  --color-blue-200: #b9d4ff;
-  --color-blue-300: #88b6ff;
-  --color-blue-400: #5898ff;
-  --color-blue-500: #2176ff;
-  --color-blue-600: #0058e4;
-  --color-blue-700: #0041a9;
-  --color-purple-100: #f4edfb;
-  --color-purple-200: #dfcbf2;
-  --color-purple-300: #c9a7ea;
-  --color-purple-400: #b385e1;
-  --color-purple-500: #9d60d8;
-  --color-purple-600: #843ccb;
   --color-red-100: #ffecea;
   --color-red-200: #ffc4be;
   --color-red-300: #ff9990;
   --color-red-400: #ff6759;
   --color-red-500: #f81400;
   --color-red-600: #c71000;
-  --color-orange-100: #ffeddc;
-  --color-orange-200: #ffc895;
-  --color-orange-300: #ff9e43;
-  --color-orange-400: #f37500;
-  --color-orange-500: #c76000;
-  --color-yellow-100: #fff48e;
-  --color-yellow-200: #ebd400;
-  --color-yellow-300: #cab600;
-
-  /* semantic / named colors */
-  --color-light: rgb(255 255 255);
-  --color-dark: rgb(0 0 0);
-  --color-text: light-dark(var(--color-ink), var(--color-parchment));
-  --color-link: light-dark(var(--color-ink), var(--color-parchment));
-  --color-link-hover: light-dark(var(--color-rust), var(--color-gold));
-  --color-brand: var(--color-rust);
-  --color-accent: var(--color-gold);
-  --color-shaded: light-dark(var(--color-parchment), var(--color-card-dark));
 
   /* fonts */
-  --font-family: montserrat, "Trebuchet MS", sans-serif;
-  --font-family-serif: "EB Garamond", georgia, serif;
-  --font-family-mono: "JetBrains Mono", "Courier New", monospace;
-  --body-font-family: var(--font-family);
-  --heading-font-family: var(--font-family-serif);
+  --font-family: var(--body-font-family);
+  --font-family-serif: var(--accent-font-family);
+  --font-family-mono: ui-monospace, menlo, consolas, monospace;
 
-  /* heading sizes */
-  --heading-font-size-xxl: 32.44px;
-  --heading-font-size-xl: 28.83px;
-  --heading-font-size-l: 25.63px;
-  --heading-font-size-m: 22.78px;
-  --heading-font-size-s: 20.25px;
-  --heading-font-size-xs: 18px;
-  --heading-font-size-xxs: 16px;
-  --heading-line-height: 1.15;
-
-  /* body sizes */
-  --body-font-size-xxxl: 25px;
-  --body-font-size-xxl: 22px;
+  /* legacy size aliases */
+  --heading-font-size-xxs: var(--body-font-size-m);
+  --heading-line-height: 1.25;
   --body-font-size-xl: 20px;
-  --body-font-size-l: 18px;
-  --body-font-size-m: 16px;
-  --body-font-size-s: 14px;
-  --body-font-size-xs: 12px;
-  --body-line-height: 1.6;
+  --body-font-size-xxl: 22px;
+  --body-font-size-xxxl: 25px;
 
-  /* nav / layout */
-  --nav-height: 64px;
+  /* nav / layout – matches header block height (utility row + main bar) */
+  --nav-height: 100px;
   --header-height: var(--nav-height);
 
-  /* boilerplate compatibility – map to design tokens */
-  --background-color: light-dark(var(--color-parchment), var(--color-obsidian));
-  --light-color: var(--color-shaded);
-  --dark-color: var(--color-gray-500);
-  --text-color: var(--color-text);
-  --link-color: var(--color-link);
-  --link-hover-color: var(--color-link-hover);
-
-  /* heritage border */
-  --border-heritage: 2px solid light-dark(rgb(161 79 43 / 20%), rgb(245 242 237 / 20%));
-  --border-radius-heritage: 24px;
-
-  /* gradient and glow tokens */
-  --gradient-brand: linear-gradient(135deg, var(--color-rust) 0%, var(--color-gold) 100%);
-  --gradient-brand-dark: linear-gradient(135deg, var(--color-rust-bright) 0%, var(--color-gold) 100%);
-  --shadow-glow-rust: 0 0 40px rgb(161 79 43 / 30%);
-  --shadow-glow-gold: 0 0 40px rgb(197 160 89 / 25%);
-  --shadow-lift-m: 0 20px 40px -8px rgb(0 0 0 / 15%);
-  --shadow-lift-l: 0 30px 60px -12px rgb(0 0 0 / 22%);
-  --shadow-card: 0 2px 8px rgb(0 0 0 / 5%), 0 1px 2px rgb(0 0 0 / 7%);
-  --shadow-card-dark: 0 2px 12px rgb(0 0 0 / 45%), 0 1px 4px rgb(0 0 0 / 30%);
-
-  /* easing presets for consistent motion */
+  /* borders, shadows, motion */
+  --border-heritage: 1px solid var(--cambria-gray-line);
+  --border-radius-heritage: var(--button-radius);
+  --gradient-brand: linear-gradient(90deg, var(--cambria-gold) 0%, var(--cambria-gold-bright) 100%);
+  --shadow-lift-m: 0 4px 4px rgb(0 0 0 / 25%);
+  --shadow-lift-l: 0 8px 16px rgb(0 0 0 / 25%);
+  --shadow-card: 0 2px 8px rgb(0 0 0 / 8%);
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-out-smooth: cubic-bezier(0.22, 1, 0.36, 1);
-}
-
-:root[data-theme='light'],
-:host([data-theme='light']) {
-  color-scheme: light;
-}
-
-:root[data-theme='dark'],
-:host([data-theme='dark']) {
-  color-scheme: dark;
-}
-
-@media (width >= 600px) {
-  :root,
-  :host {
-    --heading-font-size-xxl: 44px;
-    --heading-font-size-xl: 36px;
-    --content-padding-inline: var(--space-l);
-    --main-block-space: var(--space-xl);
-    --section-block-space: var(--space-xl);
-  }
-}
-
-@media (width >= 900px) {
-  :root,
-  :host {
-    --body-font-size-m: 18px;
-    --body-font-size-s: 16px;
-    --body-font-size-xs: 14px;
-    --heading-font-size-xxl: 64px;
-    --heading-font-size-xl: 48px;
-    --heading-font-size-l: 32px;
-    --heading-font-size-m: 24px;
-    --heading-font-size-s: 20px;
-    --heading-font-size-xs: 18px;
-    --content-padding-inline: var(--space-xl);
-    --section-block-space: var(--space-3xl);
-  }
 }
 
 @media (width >= 1200px) {
   :root,
   :host {
-    --grid-container-width: 1200px;
+    --nav-height: 128px;
   }
 }
 
-/* optional scheme classes for forced light/dark */
-.light-scheme {
-  color-scheme: light;
-}
-
-.dark-scheme {
-  color-scheme: dark;
-}
-
-/* theme aliases from page metadata (theme: dark / light) */
-body.light,
-body.theme-light {
-  color-scheme: light;
-}
-
-body.dark,
-body.theme-dark {
-  color-scheme: dark;
-}
-
-/* fallback fonts */
+/* fallback font: metric-matched Arial to limit layout shift while Montserrat loads */
 @font-face {
-  font-family: roboto-condensed-fallback;
-  size-adjust: 88.82%;
-  src: local('Arial');
-}
-
-@font-face {
-  font-family: roboto-fallback;
-  size-adjust: 99.529%;
+  font-family: montserrat-fallback;
+  size-adjust: 113.4%;
+  ascent-override: 85.4%;
+  descent-override: 22.1%;
+  line-gap-override: 0%;
   src: local('Arial');
 }
 
 /* ==========================================================================
-   Base layout and LCP-critical styles (boilerplate structure preserved)
+   Base layout and LCP-critical styles
    ========================================================================== */
 
 html {
   min-height: 100%;
   scroll-padding-top: calc(var(--nav-height) + 1rem);
-  scroll-behavior: smooth;
-}
-
-::selection {
-  background: light-dark(rgb(161 79 43 / 20%), rgb(197 160 89 / 30%));
-  color: inherit;
 }
 
 body {
@@ -271,11 +141,6 @@ body {
   margin: 0;
   box-sizing: border-box;
   background-color: var(--background-color);
-  background-image:
-    radial-gradient(ellipse 80% 50% at 12% 8%,
-      light-dark(rgb(197 160 89 / 9%), rgb(197 160 89 / 4%)) 0%, transparent 60%),
-    radial-gradient(ellipse 55% 40% at 88% 82%,
-      light-dark(rgb(161 79 43 / 6%), rgb(161 79 43 / 3%)) 0%, transparent 50%);
   color: var(--text-color);
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
@@ -306,42 +171,53 @@ footer .footer[data-block-status="loaded"] {
   visibility: visible;
 }
 
-/* typography */
+/* typography – exact computed values from cambriausa.com default content */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin-top: 0.8em;
-  margin-bottom: 0.4em;
+  margin-top: 0;
+  margin-bottom: 12px;
+  color: var(--heading-color);
   font-family: var(--heading-font-family);
-  font-weight: 500;
+  font-weight: 300;
   line-height: var(--heading-line-height);
-  scroll-margin: 40px;
+  scroll-margin: calc(var(--nav-height) + 16px);
 }
 
 h1 {
   font-size: var(--heading-font-size-xxl);
-  letter-spacing: -0.02em;
+  line-height: var(--heading-line-height-xxl);
 }
 
 h2 {
+  color: var(--heading-accent-color);
   font-size: var(--heading-font-size-xl);
-  letter-spacing: -0.015em;
+  line-height: var(--heading-line-height-xl);
 }
 
-h3 { font-size: var(--heading-font-size-m); }
-h4 { font-size: var(--heading-font-size-s); }
-h5 { font-size: var(--heading-font-size-xs); }
-h6 { font-size: var(--heading-font-size-xxs); }
-
-@media (width >= 600px) {
-  h3 { font-size: var(--heading-font-size-l); }
-  h4 { font-size: var(--heading-font-size-m); }
-  h5 { font-size: var(--heading-font-size-s); }
+h3 {
+  font-size: var(--heading-font-size-l);
+  font-weight: 500;
+  line-height: var(--heading-line-height-l);
 }
 
+h4 {
+  font-size: var(--heading-font-size-m);
+  font-weight: 500;
+}
+
+h5 {
+  font-size: var(--heading-font-size-s);
+  font-weight: 600;
+}
+
+h6 {
+  font-size: var(--heading-font-size-xs);
+  font-weight: 600;
+}
 
 p,
 dl,
@@ -349,20 +225,19 @@ ol,
 ul,
 pre,
 blockquote {
-  margin-top: 0.8em;
-  margin-bottom: 0.25em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+main .default-content-wrapper > p {
+  color: var(--copy-color);
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
 }
 
 main ul,
 main ol {
   padding-inline-start: var(--space-l);
-}
-
-main ul ul,
-main ul ol,
-main ol ul,
-main ol ol {
-  padding-inline-start: var(--space-m);
 }
 
 code,
@@ -371,85 +246,145 @@ pre {
   font-size: var(--body-font-size-s);
 }
 
-:not(pre) > code {
-  padding: 0.1em 0.35em;
-  background: rgb(161 79 43 / 10%);
-  border-radius: 4px;
-  color: var(--color-rust);
-}
-
 pre {
-  padding: var(--space-l);
-  border-radius: var(--space-s);
+  padding: var(--space-m);
   background-color: var(--light-color);
   overflow-x: auto;
   white-space: pre;
 }
 
-strong {
-  font-weight: 600;
+strong,
+b {
+  font-weight: 700;
+}
+
+sup {
+  font-size: 0.5em;
+  line-height: 0;
 }
 
 /* links */
 a:any-link {
   color: var(--link-color);
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.2em;
-  text-decoration-color: light-dark(rgb(26 26 26 / 30%), rgb(245 242 237 / 30%));
+  font-weight: 700;
+  text-decoration: none;
   overflow-wrap: break-word;
 }
 
 a:hover {
   color: var(--link-hover-color);
   text-decoration: underline;
-  text-decoration-color: var(--link-hover-color);
 }
 
-/* buttons (AEM default content: links in standalone paragraphs) */
-p.button-container {
-  margin: var(--space-m) 0;
+a:active {
+  color: var(--cambria-blue-active);
 }
 
-a.button:any-link,
-button.button {
+:is(a, button, input, select, textarea, [tabindex]):focus-visible {
+  outline: 2px solid var(--cambria-focus);
+  outline-offset: 2px;
+}
+
+/* ==========================================================================
+   Buttons
+   - default (.button): Cambria text CTA – bold blue, underline on hover
+   - primary (**link**): black filled, gold on hover
+   - secondary (_link_): black outline, gold on hover
+   Blocks restyle buttons in their own scope (e.g. white hero buttons).
+   ========================================================================== */
+
+main .button-container {
+  margin: 0;
+}
+
+main a.button:any-link,
+main button.button {
   box-sizing: border-box;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-xs);
   max-width: 100%;
+  min-height: var(--button-height);
   margin: 0;
-  border: 1px solid light-dark(var(--color-rust), var(--color-rust-bright));
-  border-radius: 4px;
-  padding: 20px 50px;
-  font: inherit;
+  padding: 0;
+  border: 1px solid transparent;
+  border-radius: var(--button-radius);
+  background: none;
+  color: var(--link-color);
+  font-family: var(--body-font-family);
+  font-size: var(--button-font-size);
   font-weight: 700;
-  font-size: 0.85rem;
-  line-height: 1.2;
+  line-height: 24px;
   text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  background-color: light-dark(var(--color-rust), var(--color-rust-bright));
-  background-image: linear-gradient(135deg, rgb(255 255 255 / 12%), rgb(0 0 0 / 8%));
-  color: var(--color-light);
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  white-space: normal;
   cursor: pointer;
-  overflow: hidden;
-  position: relative;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  transition: all 0.4s;
+  transition: all var(--button-transition);
 }
 
-a.button:any-link::after,
-button.button::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(105deg, transparent 30%, rgb(255 255 255 / 22%) 50%, transparent 70%);
-  transform: translateX(-120%);
-  transition: transform 0.55s ease;
+main a.button:any-link:hover,
+main button.button:hover {
+  color: var(--link-color);
+  text-decoration-color: currentcolor;
+}
+
+main a.button:any-link:active,
+main button.button:active {
+  color: var(--cambria-blue-active);
+}
+
+main a.button.primary:any-link,
+main button.button.primary {
+  padding: 0 var(--button-padding-inline);
+  border-color: var(--cambria-black);
+  background-color: var(--cambria-black);
+  color: var(--cambria-white);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+main a.button.primary:any-link:hover,
+main button.button.primary:hover {
+  border-color: var(--cambria-gold-hover);
+  background-color: var(--cambria-gold-hover);
+  color: var(--cambria-white);
+}
+
+main a.button.primary:any-link:active,
+main button.button.primary:active {
+  border-color: var(--cambria-gold-active);
+  background-color: var(--cambria-gold-active);
+}
+
+main a.button.secondary:any-link,
+main button.button.secondary {
+  padding: 0 var(--button-padding-inline);
+  border-color: var(--cambria-black);
+  background-color: transparent;
+  color: var(--cambria-black);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+main a.button.secondary:any-link:hover,
+main button.button.secondary:hover {
+  border-color: var(--cambria-gold-hover);
+  color: var(--cambria-gold-hover);
+}
+
+main a.button.secondary:any-link:active,
+main button.button.secondary:active {
+  border-color: var(--cambria-gold-active);
+  color: var(--cambria-gold-active);
+}
+
+main a.button[aria-disabled='true'],
+main button.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 input,
@@ -459,83 +394,9 @@ button {
   font: inherit;
 }
 
-/* Primary variant */
-a.button.primary:any-link,
-button.button.primary {
-  border-color: var(--color-rust);
-  background-color: var(--color-rust);
-  color: var(--color-light);
-}
-
-a.button:any-link:hover,
-a.button:any-link:focus-visible,
-button.button:hover,
-button.button:focus-visible {
-  background-color: var(--color-gold);
-  border-color: var(--color-gold);
-  transform: translateY(-3px);
-  box-shadow: 0 14px 30px light-dark(rgb(161 79 43 / 30%), rgb(209 106 62 / 35%)), 0 0 0 1px var(--color-gold);
-  cursor: pointer;
-  text-decoration: none;
-}
-
-a.button:any-link:hover::after,
-a.button:any-link:focus-visible::after,
-button.button:hover::after,
-button.button:focus-visible::after {
-  transform: translateX(120%);
-}
-
-a.button.primary:hover,
-a.button.primary:focus-visible,
-button.button.primary:hover,
-button.button.primary:focus-visible {
-  border-color: var(--color-gold);
-  background-color: var(--color-gold);
-  color: var(--color-light);
-}
-
-a.button:any-link:focus-visible,
-button.button:focus-visible {
-  outline: 2px solid var(--link-color);
-  outline-offset: 2px;
-}
-
-a.button[aria-disabled='true'],
-a.button[aria-disabled='true']:hover,
-a.button[aria-disabled='true']:focus-visible,
-button.button:disabled,
-button.button:disabled:hover,
-button.button:disabled:focus-visible {
-  background-color: var(--light-color);
-  border-color: var(--light-color);
-  color: var(--dark-color);
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-a.button.secondary,
-button.button.secondary {
-  border: 1.5px solid var(--color-rust);
-  background-color: transparent;
-  color: var(--color-rust);
-}
-
-a.button.secondary:hover,
-a.button.secondary:focus-visible,
-button.button.secondary:hover,
-button.button.secondary:focus-visible {
-  border-color: var(--color-gold);
-  background-color: light-dark(rgb(197 160 89 / 8%), rgb(197 160 89 / 12%));
-  color: var(--color-gold);
-  transform: translateY(-3px);
-  box-shadow: 0 14px 30px light-dark(rgb(197 160 89 / 18%), rgb(197 160 89 / 22%));
-}
-
-/* main content area – use design tokens for rhythm */
-main > div {
-  margin: var(--main-block-space) var(--content-padding-inline);
-}
+/* ==========================================================================
+   Images and icons
+   ========================================================================== */
 
 main img {
   max-width: 100%;
@@ -554,18 +415,9 @@ main img {
   width: 100%;
 }
 
-/* Global logo: adaptive color and consistent size everywhere */
 .icon.icon-logo {
   width: 200px;
   height: 45px;
-  color: light-dark(var(--color-rust), var(--color-rust-bright));
-}
-
-main .icon.icon-logo {
-  display: inline-block;
-  vertical-align: middle;
-  padding-right: 10px;
-  margin-bottom: 4px;
 }
 
 /* Reserve space for unsized images to reduce CLS */
@@ -574,162 +426,479 @@ main img:not([width], [height]) {
   object-fit: cover;
 }
 
-/* sections – boilerplate structure with design tokens */
+/* ==========================================================================
+   Sections – 50px rhythm between sections, 1300px content (70px gutters)
+   ========================================================================== */
+
+main {
+  padding-bottom: var(--section-spacing);
+}
+
+main > div {
+  margin: 0;
+}
+
 :is(main, article.article-body) > .section {
-  margin: inherit;
-  padding-block: var(--space-xl);
+  margin: 0;
+  padding: var(--section-spacing) 0 0;
 }
 
 main > .section:first-child {
-  padding-block-start: 0;
-
-  /* Reduce CLS: contain layout so section appearance causes less reflow.
-     Exclude social-share section: contain creates a containing block for position:fixed,
-     which would break the sticky share buttons. */
-  contain: layout;
+  padding-top: 12px;
 }
 
-main > .section:has(.social-share) {
-  contain: none;
+/* full-bleed hero as first section sits directly under the header */
+main > .section.hero-video-container:first-child {
+  padding-top: 0;
 }
 
 main > .section > div,
 article.article-body > .section > div {
-  max-width: var(--grid-container-width);
-  margin: auto;
+  box-sizing: border-box;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
   padding: 0 var(--content-padding-inline);
 }
 
-/* section metadata */
-main .section.light,
-main .section.highlight {
+/* floating share widget section (injected by delayed.js) takes no layout space */
+main > .section.social-share-container {
+  padding: 0;
+}
+
+/* section-metadata style=centered: centered default content */
+main > .section.centered > .default-content-wrapper {
+  text-align: center;
+}
+
+main > .section.centered > .default-content-wrapper > :is(ul, ol) {
+  text-align: start;
+}
+
+@media (width >= 900px) {
+  main > .section.centered > .default-content-wrapper > p:not(.button-container) {
+    max-width: 66.4%;
+    margin-inline: auto;
+  }
+}
+
+/* section-metadata style=cream: warm cream band */
+main > .section.cream {
+  padding-bottom: var(--section-spacing);
+  background-color: var(--cambria-cream);
+}
+
+/* keep the 50px rhythm between white content and a following colored band */
+main > .section:not(.cream, .light, .highlight) + .section:is(.cream, .light, .highlight) {
+  margin-top: var(--section-spacing);
+}
+
+/* a cream band directly before the footer needs no extra main padding */
+main:has(> .section.cream:last-child) {
+  padding-bottom: 0;
+}
+
+/* section-metadata style=light / highlight (boilerplate compatibility) */
+main > .section.light,
+main > .section.highlight {
+  padding-bottom: var(--section-spacing);
   background-color: var(--light-color);
+}
+
+/* section-scoped pattern rules below are grouped by pattern, not by specificity */
+/* stylelint-disable no-descending-specificity */
+
+/* ==========================================================================
+   Default-content patterns (generic)
+   ========================================================================== */
+
+/* breadcrumb: a paragraph of links directly above the page H1 */
+main > .section:first-child > .default-content-wrapper > p:first-child:has(> a + a):has(+ h1) {
+  max-width: none;
+  margin: 0 0 32px;
+  color: var(--copy-color);
+  font-size: var(--body-font-size-xs);
+  line-height: 18px;
+  text-align: start;
+}
+
+main > .section:first-child > .default-content-wrapper > p:first-child:has(> a + a):has(+ h1) a:any-link {
+  color: inherit;
+  font-weight: 400;
+}
+
+@media (width >= 900px) {
+  main > .section:first-child > .default-content-wrapper > p:first-child:has(> a + a):has(+ h1) {
+    margin-bottom: 47px;
+  }
+}
+
+/* ==========================================================================
+   PDP (product detail page)
+   ========================================================================== */
+
+/* --- section style "split": breadcrumb, gallery, product details ---
+   < 1200: one column; title + series logo move above the gallery
+   (the details wrapper uses display: contents so its children join the
+   section's flex flow); gallery is full-bleed below 900.
+   >= 1200: gallery left (57.7%), details right, breadcrumb spanning. */
+main > .section.split {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  box-sizing: border-box;
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+  padding-inline: var(--content-padding-inline);
+}
+
+main > .section.split > div {
+  flex: 0 0 100%;
+  min-width: 0;
+  max-width: none;
   margin: 0;
-  padding: var(--section-block-space) 0;
+  padding: 0;
 }
 
-/* section-metadata style=divider: content-width (grid) border-bottom */
-:is(main, article.article-body) > .section.divider {
-  position: relative;
+main > .section.split > .default-content-wrapper:first-child {
+  margin-bottom: 12px;
 }
 
-:is(main, article.article-body) > .section.divider::after {
+main > .section.split > .carousel-gallery-wrapper {
+  flex-basis: auto;
+  order: 2;
+  width: calc(100% + 2 * var(--content-padding-inline));
+  margin: 0 calc(-1 * var(--content-padding-inline)) 12px;
+}
+
+/* thin rule between the product area and the next section */
+main > .section.split::after {
   content: '';
+  flex: 0 0 100%;
+  order: 4;
+  margin-top: var(--section-spacing);
+  border-top: 1px solid var(--cambria-gray-line);
+}
+
+main > .section.split > .default-content-wrapper:last-child {
+  display: contents;
+}
+
+main > .section.split > .default-content-wrapper:last-child > * {
+  flex: 0 0 100%;
+  order: 3;
+  min-width: 0;
+  margin: 0;
+}
+
+main > .section.split > .default-content-wrapper:last-child > :is(h1, h1 + p:has(> picture)) {
+  order: 1;
+}
+
+main > .section.split > .default-content-wrapper:last-child > h1 {
+  margin-bottom: 15px;
+  color: var(--cambria-black);
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 38px;
+}
+
+main > .section.split > .default-content-wrapper:last-child > p:has(> picture) img {
   display: block;
-  max-width: var(--grid-container-width);
-  padding: 12px 0 24px;
-  margin: 0 auto;
-  border-bottom: 1px solid var(--color-gray-200);
+  width: auto;
+  aspect-ratio: auto;
 }
 
-:is(main, article.article-body) > .section.divider.center {
-    text-align: center;
+/* series logo (under the title) */
+main > .section.split > .default-content-wrapper:last-child > h1 + p:has(> picture) {
+  margin-bottom: 25px;
 }
 
-/* section-metadata or block style: spacer utilities – add to section metadata or block styles for readability gaps */
-.spacer-top-s { margin-top: var(--space-s); }
-.spacer-top-m { margin-top: var(--space-m); }
-.spacer-top-l { margin-top: var(--space-l); }
-.spacer-bottom-s { margin-bottom: var(--space-s); }
-.spacer-bottom-m { margin-bottom: var(--space-m); }
-.spacer-bottom-l { margin-bottom: var(--space-l); }
-
-/* section-metadata style=rust: bold brand accent section */
-main > .section.rust {
-  background-color: var(--color-rust);
-  color: var(--color-parchment);
-  margin: 0;
-  padding: var(--space-3xl, var(--section-block-space)) 0;
+main > .section.split > .default-content-wrapper:last-child > h1 + p:has(> picture) img {
+  height: 11px;
 }
 
-main > .section.rust * {
-  color: var(--color-parchment);
+/* intro copy (before the "Details" heading) */
+main > .section.split > .default-content-wrapper:last-child > p:not(h2 ~ *, .button-container, :has(> picture)) {
+  margin: 20px 35px 20px 0;
+  color: var(--cambria-gray-text);
+  font-size: 16px;
+  line-height: 25px;
 }
 
-main > .section.rust a:any-link {
-  color: var(--color-parchment);
-  text-decoration-color: rgb(245 242 237 / 40%);
+/* lead-ins directly above buttons/links: "Experience…", "Questions?" */
+main > .section.split > .default-content-wrapper:last-child > p:not(h2 ~ *, .button-container, :has(> picture)):has(+ .button-container) {
+  margin: 0 0 4px;
+  color: var(--cambria-black);
+  font-weight: 500;
 }
 
-/* section-metadata style=gradient: warm brand gradient full-bleed section */
-:is(main, article.article-body) > .section.gradient {
-  background: var(--gradient-brand);
-  color: var(--color-parchment);
-  margin: 0;
-  padding: var(--space-3xl, var(--section-block-space)) 0;
+main > .section.split > .default-content-wrapper:last-child > p:not(h2 ~ *, .button-container, :has(> picture)):has(+ .button-container + .button-container) {
+  margin-bottom: 16px;
 }
 
-:is(main, article.article-body) > .section.gradient * {
-  color: var(--color-parchment);
+/* CTA pair: first = black filled, second = black outline */
+main > .section.split > .default-content-wrapper:last-child > .button-container:not(h2 ~ *):has(+ .button-container) {
+  flex-basis: auto;
+  margin-bottom: 16px;
 }
 
-:is(main, article.article-body) > .section.gradient a:any-link {
-  color: var(--color-parchment);
-  text-decoration-color: rgb(255 255 255 / 40%);
+main > .section.split > .default-content-wrapper:last-child > .button-container + .button-container:not(h2 ~ *) {
+  flex-basis: 100%;
+  margin-bottom: 16px;
 }
 
-/* Shared button overrides for colored sections (rust, gradient) */
-:is(main, article.article-body) > .section.rust a.button:any-link,
-:is(main, article.article-body) > .section.rust button.button,
-:is(main, article.article-body) > .section.gradient a.button:any-link,
-:is(main, article.article-body) > .section.gradient button.button {
-  border-color: var(--color-parchment);
+main > .section.split > .default-content-wrapper:last-child > .button-container:not(h2 ~ *):is(:has(+ .button-container), .button-container + *) > a.button:any-link {
+  min-width: 175px;
+  padding: 0 var(--button-padding-inline);
+  border-color: var(--cambria-black);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-decoration: none;
+}
+
+main > .section.split > .default-content-wrapper:last-child > .button-container:not(h2 ~ *):has(+ .button-container) > a.button:any-link {
+  background-color: var(--cambria-black);
+  color: var(--cambria-white);
+}
+
+main > .section.split > .default-content-wrapper:last-child > .button-container:not(h2 ~ *):has(+ .button-container) > a.button:any-link:hover {
+  border-color: var(--cambria-gold-hover);
+  background-color: var(--cambria-gold-hover);
+}
+
+main > .section.split > .default-content-wrapper:last-child > .button-container + .button-container:not(h2 ~ *) > a.button:any-link {
   background-color: transparent;
-  background-image: none;
-  color: var(--color-parchment);
-  box-shadow: none;
+  color: var(--cambria-black);
 }
 
-:is(main, article.article-body) > .section.rust a.button:any-link:hover,
-:is(main, article.article-body) > .section.rust button.button:hover,
-:is(main, article.article-body) > .section.gradient a.button:any-link:hover,
-:is(main, article.article-body) > .section.gradient button.button:hover {
-  background-color: var(--color-parchment);
-  border-color: var(--color-parchment);
-  color: var(--color-rust);
-  box-shadow: 0 8px 24px rgb(0 0 0 / 20%);
+main > .section.split > .default-content-wrapper:last-child > .button-container + .button-container:not(h2 ~ *) > a.button:any-link:hover {
+  border-color: var(--cambria-gold-hover);
+  color: var(--cambria-gold-hover);
 }
 
-/* section-metadata style=ink: deep dark full-bleed section */
-:is(main, article.article-body) > .section.ink {
-  background-color: var(--color-ink);
-  color: var(--color-parchment);
-  margin: 0;
-  padding: var(--space-3xl, var(--section-block-space)) 0;
+/* phone link */
+main > .section.split > .default-content-wrapper:last-child > .button-container:has(> a[href^='tel:']) > a.button:any-link {
+  display: inline;
+  min-height: 0;
+  font-size: 16px;
+  line-height: 25px;
+  text-align: start;
 }
 
-:is(main, article.article-body) > .section.ink * {
-  color: var(--color-parchment);
+/* secondary logo (e.g. Family Owned American Made) */
+main > .section.split > .default-content-wrapper:last-child > p:not(h1 + p):has(> picture) {
+  margin-top: 13px;
 }
 
-/* section-metadata style=warm: atmospheric warm tint with heritage diamond mesh */
-main > .section.warm {
-  background-color: light-dark(#f2ead8, #0e1812);
-  background-image:
-    repeating-linear-gradient(
-      45deg,
-      light-dark(rgb(161 79 43 / 4%), rgb(245 242 237 / 2%)) 0,
-      light-dark(rgb(161 79 43 / 4%), rgb(245 242 237 / 2%)) 1px,
-      transparent 1px,
-      transparent 12px
-    ),
-    repeating-linear-gradient(
-      -45deg,
-      light-dark(rgb(161 79 43 / 4%), rgb(245 242 237 / 2%)) 0,
-      light-dark(rgb(161 79 43 / 4%), rgb(245 242 237 / 2%)) 1px,
-      transparent 1px,
-      transparent 12px
-    );
-  margin: 0;
-  padding: var(--space-3xl, var(--section-block-space)) 0;
+main > .section.split > .default-content-wrapper:last-child > p:not(h1 + p):has(> picture) img {
+  height: 40px;
 }
 
-/* gradient-text utility: apply to any heading or span for brand gradient text */
-.gradient-text {
-  background: var(--gradient-brand);
-  background-clip: text;
-  color: transparent;
+/* "Details" */
+main > .section.split > .default-content-wrapper:last-child > h2 {
+  margin: 30px 0 0;
+  padding-top: 30px;
+  border-top: 1px solid var(--cambria-gray-line);
+  color: var(--copy-color);
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 35px;
 }
+
+/* detail values (e.g. thicknesses) */
+main > .section.split > .default-content-wrapper:last-child > h2 ~ p {
+  color: var(--copy-color);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+main > .section.split > .default-content-wrapper:last-child > h2 ~ p:not(.button-container)::before {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 4px;
+  margin-inline-end: 8px;
+  background-color: var(--cambria-black);
+  vertical-align: middle;
+}
+
+/* detail labels: COLOR & FEATURES, FINISH, SLAB SIZE, THICKNESS, PRODUCT CARE */
+main > .section.split > .default-content-wrapper:last-child > :is(
+  h2 + p,
+  h2 ~ .button-container + p:not(.button-container),
+  h2 ~ .button-container + p:not(.button-container) + p,
+  h2 ~ .button-container + p:not(.button-container) + p + p,
+  p:has(+ p + p + ul)
+) {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 27px;
+}
+
+main > .section.split > .default-content-wrapper:last-child > :is(
+  h2 + p,
+  h2 ~ .button-container + p:not(.button-container),
+  h2 ~ .button-container + p:not(.button-container) + p,
+  h2 ~ .button-container + p:not(.button-container) + p + p,
+  p:has(+ p + p + ul),
+  p:has(+ p + ul),
+  p:has(+ ul),
+  ul + p
+)::before {
+  content: none;
+}
+
+/* inline links inside a label row (FINISH) */
+main > .section.split > .default-content-wrapper:last-child > h2 ~ .button-container + p:not(.button-container) > a:any-link {
+  font-weight: 600;
+}
+
+main > .section.split > .default-content-wrapper:last-child > h2 ~ .button-container + p:not(.button-container) > a:first-of-type {
+  margin-inline-start: 6px;
+}
+
+/* color & feature links: one row */
+main > .section.split > .default-content-wrapper:last-child > h2 ~ .button-container {
+  flex-basis: auto;
+  margin-inline-end: 24px;
+}
+
+main > .section.split > .default-content-wrapper:last-child > h2 ~ .button-container > a.button:any-link {
+  min-height: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+}
+
+/* product care copy, downloads label, disclaimer */
+main > .section.split > .default-content-wrapper:last-child > :is(p:has(+ p + ul), p:has(+ ul), ul + p) {
+  color: var(--cambria-gray-text);
+}
+
+main > .section.split > .default-content-wrapper:last-child > p:has(+ ul) {
+  margin-top: 20px;
+  font-weight: 500;
+}
+
+main > .section.split > .default-content-wrapper:last-child > ul + p {
+  margin-top: 27px;
+}
+
+/* downloads: inline list with bar separators (the leading bar of each row is clipped) */
+main > .section.split > .default-content-wrapper:last-child > h2 ~ ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin-inline-start: -25px;
+  padding: 0;
+  list-style: none;
+  clip-path: inset(0 0 0 25px);
+}
+
+main > .section.split > .default-content-wrapper:last-child > h2 ~ ul > li::before {
+  content: '';
+  display: inline-block;
+  width: 1px;
+  height: 16px;
+  margin: 0 12px;
+  background-color: var(--copy-color);
+  vertical-align: -2px;
+}
+
+main > .section.split > .default-content-wrapper:last-child > h2 ~ ul a:any-link {
+  color: var(--copy-color);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 27px;
+}
+
+@media (width >= 900px) {
+  main > .section.split > .carousel-gallery-wrapper {
+    width: 100%;
+    margin-inline: 0;
+  }
+
+  main > .section.split > .default-content-wrapper:last-child > h1 + p:has(> picture) {
+    margin-bottom: 16px;
+  }
+
+  main > .section.split > .default-content-wrapper:last-child > h1 + p:has(> picture) img {
+    height: 16px;
+  }
+
+  main > .section.split > .default-content-wrapper:last-child > p:not(h2 ~ *, .button-container, :has(> picture)) {
+    margin-inline-end: 0;
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  main > .section.split > .default-content-wrapper:last-child > .button-container:not(h2 ~ *):has(+ .button-container) {
+    margin-inline-end: 16px;
+  }
+
+  main > .section.split > .default-content-wrapper:last-child > .button-container + .button-container:not(h2 ~ *) {
+    flex-basis: auto;
+  }
+
+  main > .section.split > .default-content-wrapper:last-child > .button-container:not(h2 ~ *):is(:has(+ .button-container), .button-container + *) > a.button:any-link {
+    min-width: 191px;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  main > .section.split > .default-content-wrapper:last-child > .button-container:has(> a[href^='tel:']) > a.button:any-link {
+    font-size: 18px;
+    line-height: 22px;
+  }
+
+  main > .section.split > .default-content-wrapper:last-child > p:not(h1 + p):has(> picture) {
+    margin-top: 18px;
+  }
+}
+
+@media (width >= 1200px) {
+  main > .section.split {
+    display: grid;
+    grid-template-columns: 57.7% minmax(0, 1fr);
+    column-gap: 57px;
+  }
+
+  main > .section.split > .default-content-wrapper:first-child,
+  main > .section.split::after {
+    grid-column: 1 / -1;
+  }
+
+  main > .section.split > .carousel-gallery-wrapper {
+    grid-area: 2 / 1;
+    order: 0;
+    margin: 0;
+  }
+
+  main > .section.split > .default-content-wrapper:last-child {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    grid-area: 2 / 2;
+  }
+
+  main > .section.split > .default-content-wrapper:last-child > *,
+  main > .section.split > .default-content-wrapper:last-child > :is(h1, h1 + p:has(> picture)) {
+    order: 0;
+  }
+
+  main > .section.split > .default-content-wrapper:last-child > h1 + p:has(> picture) {
+    margin-bottom: 0;
+  }
+
+  main > .section.split > .default-content-wrapper:last-child > h1 {
+    margin-bottom: 23px;
+    font-size: 38px;
+    line-height: 40px;
+  }
+}
+
+/* stylelint-enable no-descending-specificity */
 
 /* hide library metadata from being seen in block library */
 .library-metadata-wrapper {

@@ -1,0 +1,11 @@
+{
+  "type": "da",
+  "sites": {
+    "cambriausa": {
+      "previewOrg": "EricaYock",
+      "previewSite": "cambriausa",
+      "contentHostUrl": "https://content.da.live/ericayock/cambriausa/",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+    }
+  }
+}

@@ -1,0 +1,142 @@
+/* full-bleed banner: release the section's 1440px / gutter constraint */
+main > .section > .hero-gradient-wrapper {
+  max-width: none;
+  padding: 0;
+}
+
+.hero-gradient {
+  /* source .cmp-image::after (mobile: top-down, desktop: left-right), opacity 0.7 */
+  --hero-gradient-overlay: linear-gradient(
+    180deg,
+    rgb(3 0 0) 1.58%,
+    rgb(3 0 0 / 95.3%) 25.99%,
+    rgb(3 0 0 / 0%) 56.33%,
+    rgb(3 0 0 / 0%) 98.6%
+  );
+
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  min-height: 450px;
+  overflow: hidden;
+  color: var(--cambria-white);
+}
+
+.hero-gradient .hero-gradient-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-gradient .hero-gradient-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--hero-gradient-overlay);
+  opacity: 0.7;
+}
+
+.hero-gradient .hero-gradient-media picture,
+.hero-gradient .hero-gradient-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.hero-gradient .hero-gradient-content {
+  position: relative;
+  z-index: 1;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  padding: 37.5px 20px 0;
+}
+
+.hero-gradient .hero-gradient-content h2 {
+  margin: 0;
+  color: var(--cambria-white);
+}
+
+.hero-gradient .hero-gradient-content p {
+  color: var(--cambria-white);
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.hero-gradient .hero-gradient-content .button-container {
+  margin-top: 8px;
+}
+
+/* white filled CTA */
+main .hero-gradient a.button:any-link {
+  height: var(--button-height);
+  padding: 0 var(--button-padding-inline);
+  border: 1px solid var(--cambria-white);
+  border-radius: var(--button-radius);
+  background-color: var(--cambria-white);
+  color: var(--cambria-black);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-decoration: none;
+}
+
+main .hero-gradient a.button:any-link:hover,
+main .hero-gradient a.button:any-link:focus-visible {
+  border-color: var(--cambria-gold-hover);
+  background-color: var(--cambria-gold-hover);
+  color: var(--cambria-white);
+}
+
+main .hero-gradient a.button:any-link:active {
+  border-color: var(--cambria-gold-active);
+  background-color: var(--cambria-gold-active);
+  color: var(--cambria-white);
+}
+
+.hero-gradient.no-media {
+  min-height: 0;
+  color: inherit;
+}
+
+@media (width >= 600px) {
+  .hero-gradient .hero-gradient-content {
+    padding-top: 48px;
+  }
+}
+
+@media (width >= 900px) {
+  .hero-gradient {
+    --hero-gradient-overlay: linear-gradient(
+      90deg,
+      rgb(3 0 0) 26.49%,
+      rgb(3 0 0 / 77%) 33.85%,
+      rgb(3 0 0 / 0%) 58.54%,
+      rgb(3 0 0 / 0%)
+    );
+
+    align-items: center;
+    min-height: 512px;
+  }
+
+  .hero-gradient .hero-gradient-content {
+    gap: 20px;
+    width: 34%;
+    margin-left: 5%;
+    padding: 0;
+  }
+
+  .hero-gradient .hero-gradient-content p {
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  .hero-gradient .hero-gradient-content .button-container {
+    margin-top: 10px;
+  }
+}

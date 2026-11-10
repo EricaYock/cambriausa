@@ -359,3 +359,27 @@ export function getBlockContext(block) {
     isEmbed,
   };
 }
+
+const placeholdersCache = {};
+
+/**
+ * Fetch author-managed UI strings from the locale's placeholders sheet.
+ * Keys are camel-cased from the sheet's `Key` column. Resolves to {} on failure,
+ * so callers should always provide a fallback string.
+ * @param {string} [prefix] - Locale prefix (defaults to the current locale)
+ * @returns {Promise<Record<string, string>>}
+ */
+export function fetchPlaceholders(prefix = getLocale().prefix) {
+  if (!placeholdersCache[prefix]) {
+    placeholdersCache[prefix] = fetch(`${prefix}/placeholders.json`)
+      .then((resp) => (resp.ok ? resp.json() : { data: [] }))
+      .then((json) => (json.data || []).reduce((acc, { Key, Text }) => {
+        if (!Key) return acc;
+        const key = Key.toLowerCase().replace(/[^0-9a-z]+(.)/g, (m, chr) => chr.toUpperCase());
+        acc[key] = Text;
+        return acc;
+      }, {}))
+      .catch(() => ({}));
+  }
+  return placeholdersCache[prefix];
+}

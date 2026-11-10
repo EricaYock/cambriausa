@@ -1,0 +1,25 @@
+{
+  "variantName": "cards-product",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "Commerce product listing grid with an optional promo tile",
+    "description": "4-up grid (2-up mobile) of bordered light-grey product cards: square swatch image with an optional 'New' badge top-left, small vendor line, linked product name and price; the whole card links to the product. A promo tile (photo with a bold title and a CTA button overlaid) can sit in the grid, typically first."
+  },
+  "contentPattern": {
+    "structure": "one row per tile: image cell, then a text cell. Product: optional badge paragraph ('New'), vendor paragraph, linked product name, price paragraph. Promo: bold title paragraph (or heading) and a CTA link",
+    "rationale": "Repeating look-alike items that each link to a product detail page: Cards. The dynamic product list is captured as static authored rows."
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": {
+    "pagesUsing": [
+      "/collections/samples"
+    ],
+    "reuseCount": 0,
+    "lastUsed": "2026-11-09T18:27:51.000Z"
+  },
+  "reuseGuidance": "Use for product listings where each card carries a vendor, linked name and price. Use cards-swatch when items are only an image and a linked name.",
+  "sourceUrl": "https://shop.cambriausa.com/collections/samples",
+  "usageDescription": "Product grid (4-up desktop, 2-up mobile). One row per tile: image cell; text cell with an optional badge paragraph ('New') first, then the vendor, the linked product name, and the price. A row whose text has a bold title (or heading) and a link is rendered as a promo tile with the image behind the text. 'Add to cart' and hover image swap are not migrated."
+}

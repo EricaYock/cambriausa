@@ -1,0 +1,36 @@
+{
+  "analysis-urls-checklist": {
+    "captured": "2026-11-09T17:31:58.089Z",
+    "totalPages": 3,
+    "statusBreakdown": {
+      "marked": 0,
+      "analyzed": 3
+    },
+    "pages": {
+      "https://www.cambriausa.com": {
+        "url": "https://www.cambriausa.com",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-09T17:32:18.489Z",
+        "slug": "www_cambriausa_com--98af082a",
+        "title": "Cambria® Quartz Surfaces",
+        "blockCount": 23
+      },
+      "https://www.cambriausa.com/quartz-countertops/quartz-colors/designs/quintessa": {
+        "url": "https://www.cambriausa.com/quartz-countertops/quartz-colors/designs/quintessa",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-09T17:32:14.878Z",
+        "slug": "www_cambriausa_com_quartz-countertops_quartz-colors_designs_quintessa--22cd443f",
+        "title": "Quintessa™ - Cambria® Quartz Designs",
+        "blockCount": 21
+      },
+      "https://shop.cambriausa.com/collections/samples": {
+        "url": "https://shop.cambriausa.com/collections/samples",
+        "status": "analyzed",
+        "analyzedAt": "2026-11-09T17:32:18.601Z",
+        "slug": "shop_cambriausa_com_collections_samples--329c0e0c",
+        "title": "Quartz Countertop Samples – Cambria Samples Store",
+        "blockCount": 18
+      }
+    }
+  }
+}

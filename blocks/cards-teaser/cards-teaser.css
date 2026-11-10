@@ -1,0 +1,160 @@
+/* cards-teaser: image teasers with heading, copy and a text CTA.
+   Values from www.cambriausa.com home "cmp-teaser" flex container. */
+
+.cards-teaser > ul {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cards-teaser .cards-teaser-card {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+}
+
+/* mobile: image bleeds to the viewport edges, fixed 400px tall */
+.cards-teaser .cards-teaser-card-image {
+  height: 400px;
+  margin-inline: calc(-1 * var(--content-padding-inline));
+  overflow: hidden;
+}
+
+.cards-teaser .cards-teaser-card-image picture,
+.cards-teaser .cards-teaser-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cards-teaser .cards-teaser-card-body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.cards-teaser .cards-teaser-card-body h3 {
+  margin: 20px 0 0;
+  color: #000;
+}
+
+.cards-teaser .cards-teaser-card-body p {
+  margin: 20px 0 0;
+  color: var(--cambria-gray-text);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.cards-teaser .cards-teaser-card-body p.cards-teaser-card-cta {
+  margin: auto 0 0;
+  padding-top: 12px;
+}
+
+main .cards-teaser .cards-teaser-card-cta a.button:any-link {
+  justify-content: flex-start;
+  line-height: 16px;
+  text-align: start;
+}
+
+/* many-card grids (4+ cards, e.g. material comparison): compact cards */
+.cards-teaser:has(> ul > li:nth-child(4)) > ul {
+  gap: 48px 20px;
+}
+
+.cards-teaser:has(> ul > li:nth-child(4)) .cards-teaser-card {
+  padding-bottom: 0;
+}
+
+.cards-teaser:has(> ul > li:nth-child(4)) .cards-teaser-card-image {
+  height: auto;
+  margin-inline: 0;
+  aspect-ratio: 16 / 9;
+}
+
+.cards-teaser:has(> ul > li:nth-child(4)) .cards-teaser-card-body {
+  padding-top: 16px;
+}
+
+.cards-teaser:has(> ul > li:nth-child(4)) .cards-teaser-card-body h3 {
+  margin: 0 0 8.6px;
+  font-size: 21.4868px;
+  font-weight: 400;
+  line-height: 27.9329px;
+}
+
+.cards-teaser:has(> ul > li:nth-child(4)) .cards-teaser-card-body p {
+  margin: 0 0 16px;
+  color: var(--cambria-gray-copy);
+}
+
+.cards-teaser:has(> ul > li:nth-child(4)) .cards-teaser-card-body p.cards-teaser-card-cta {
+  margin: auto 0 0;
+  padding-top: 0;
+}
+
+main .cards-teaser:has(> ul > li:nth-child(4)) .cards-teaser-card-cta a.button:any-link {
+  min-height: 0;
+  border-width: 0;
+  font-weight: 400;
+  line-height: 24px;
+  text-decoration-color: currentcolor;
+}
+
+@media (width >= 600px) {
+  .cards-teaser:has(> ul > li:nth-child(4)) > ul {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (width >= 900px) {
+  .cards-teaser > ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0 12px;
+  }
+
+  .cards-teaser .cards-teaser-card-image {
+    height: 550px;
+    margin-inline: 0;
+  }
+
+  .cards-teaser .cards-teaser-card-body h3 {
+    margin-top: 30px;
+  }
+
+  .cards-teaser .cards-teaser-card-body p {
+    margin-top: 30px;
+    font-size: 18px;
+    line-height: 27px;
+  }
+
+  main .cards-teaser .cards-teaser-card-cta a.button:any-link {
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  .cards-teaser:has(> ul > li:nth-child(4)) > ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px 32px;
+  }
+
+  .cards-teaser:has(> ul > li:nth-child(4)) .cards-teaser-card-body h3 {
+    margin: 0 0 9.5158px;
+    font-size: 23.7895px;
+    line-height: 30.9263px;
+  }
+
+  .cards-teaser:has(> ul > li:nth-child(4)) .cards-teaser-card-body p {
+    margin: 0 0 16px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  main .cards-teaser:has(> ul > li:nth-child(4)) .cards-teaser-card-cta a.button:any-link {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

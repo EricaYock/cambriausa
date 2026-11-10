@@ -1,0 +1,590 @@
+{
+  "url": "https://shop.cambriausa.com/collections/samples",
+  "title": "Quartz Countertop Samples – Cambria Samples Store",
+  "timestamp": "2026-11-09T17:32:18.511Z",
+  "duration": "17.0s",
+  "cleanup": {
+    "elementsRemoved": 6,
+    "types": [
+      "popup"
+    ],
+    "cookieConsentDismissed": false,
+    "lateConsentOverlaysRemoved": 0
+  },
+  "skeleton": {
+    "signature": "sB(s(2x1,s(s,sB,6x1,s(3x1,2x1(,)),sB,4x1B,s,3x2,sB,2x1B,s(s,3x1),sB,s,s,s)),s,s,s)",
+    "nodeMap": {
+      "r": "body",
+      "rc1": "#main-content",
+      "rc1c1": "#main-content > div.container.container--breadcrumbs",
+      "rc1c2": "#main-content > div.boost-sd__product-filter-fallback",
+      "rc1c2c1": "#shopify-section-template--17768071233645__rich_text_3Pyj8y",
+      "rc1c2c2": "#shopify-section-template--17768071233645__custom_liquid_Dx6ah6",
+      "rc1c2c3": "#shopify-section-template--17768071233645__collection_list_9gEhfq",
+      "rc1c2c4": "#shopify-section-template--17768071233645__collection-products",
+      "rc1c2c4c1": "#products-toolbar",
+      "rc1c2c4c2": "#shopify-section-template--17768071233645__collection-products > div.container > custom-pagination.main-products-grid.main-products-grid--contained.flex",
+      "rc1c2c4c2c1": "#filter-results > ul.grid.mb-8.md\\:mb-12.grid-cols-2.small-cards-mobile.sm\\:grid-cols-2.md\\:grid-cols-3.xl\\:grid-cols-4.gap-card",
+      "rc1c2c4c2c2": "#filter-results > nav",
+      "rc1c2c5": "#shopify-section-template--17768071233645__rich_text_w6Cxxw",
+      "rc1c2c6": "#shopify-section-template--17768071233645__icons_with_text_cUfzzz",
+      "rc1c2c7": "#shopify-section-template--17768071233645__rich_text_VjFrk8",
+      "rc1c2c8": "#shopify-section-template--17768071233645__multi_column_HPW7f7",
+      "rc1c2c9": "#shopify-section-template--17768071233645__custom_liquid_RDyGfx",
+      "rc1c2c10": "#shopify-section-template--17768071233645__media_with_text_dP8VnF",
+      "rc1c2c11": "#shopify-section-template--17768071233645__multi_column_LJwAEA",
+      "rc1c2c11c1": "#template--17768071233645__multi_column_LJwAEA > div.container:nth-of-type(1)",
+      "rc1c2c11c2": "#template--17768071233645__multi_column_LJwAEA > div.container:nth-of-type(2)",
+      "rc1c2c12": "#shopify-section-template--17768071233645__custom_liquid_4TWN4i",
+      "rc1c2c13": "#shopify-section-template--17768071233645__rich_text_LdVpwX",
+      "rc1c2c14": "#shopify-section-template--17768071233645__faq_8GY3HV",
+      "rc1c2c15": "#shopify-section-template--17768071233645__rich_text_HLzaWT",
+      "rc2": "#shopify-section-sections--17768070807661__footer",
+      "rc3": "#shopify-block-AOUhadktlbTJPcUMyU__5735339852805025236",
+      "rc4": "#pop-convert-app"
+    },
+    "sections": [
+      {
+        "id": "rc1",
+        "selector": "#main-content > div.container.container--breadcrumbs",
+        "layout": "2x1",
+        "hasBg": false,
+        "hint": "block",
+        "background": "#ffffff",
+        "backgroundImage": null,
+        "colored": false,
+        "paintSelector": null
+      },
+      {
+        "id": "rc2",
+        "selector": "#main-content > div.boost-sd__product-filter-fallback",
+        "layout": null,
+        "hasBg": false,
+        "hint": "block",
+        "background": "#ffffff",
+        "backgroundImage": null,
+        "colored": false,
+        "paintSelector": null
+      },
+      {
+        "id": "rc3",
+        "selector": "#shopify-section-sections--17768070807661__footer",
+        "layout": null,
+        "hasBg": false,
+        "hint": "default-content",
+        "background": "#ffffff",
+        "backgroundImage": null,
+        "colored": false,
+        "paintSelector": null
+      },
+      {
+        "id": "rc4",
+        "selector": "#shopify-block-AOUhadktlbTJPcUMyU__5735339852805025236",
+        "layout": null,
+        "hasBg": false,
+        "hint": "default-content",
+        "background": "#ffffff",
+        "backgroundImage": null,
+        "colored": false,
+        "paintSelector": null
+      },
+      {
+        "id": "rc5",
+        "selector": "#pop-convert-app",
+        "layout": null,
+        "hasBg": false,
+        "hint": "default-content",
+        "background": "#ffffff",
+        "backgroundImage": null,
+        "colored": false,
+        "paintSelector": null
+      }
+    ],
+    "invalidIgnore": []
+  },
+  "pageLayout": {
+    "box": {
+      "y": 200.203125,
+      "height": 7237
+    },
+    "splits": [
+      {
+        "selector": "ol.breadcrumbs-list.flex > li.flex.items-center",
+        "sides": [
+          [
+            0,
+            0
+          ]
+        ],
+        "top": 200.203125,
+        "bottom": 218.203125,
+        "cover": 0.0024872184606881302,
+        "above": 0
+      }
+    ],
+    "start": {
+      "kind": "heading",
+      "look": {
+        "font": "Montserrat, sans-serif",
+        "color": "rgb(0, 0, 0)",
+        "align": "center"
+      }
+    }
+  },
+  "blocks": [
+    {
+      "id": "98200c50faf4",
+      "type": "columns",
+      "selector": "#main-content > div.container.container--breadcrumbs",
+      "bounds": {
+        "x": 0,
+        "y": 200,
+        "width": 1440,
+        "height": 18
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": "list + link"
+      },
+      "description": "container",
+      "features": {
+        "skeleton": "nav",
+        "variant": "nav",
+        "variantClean": "nav"
+      },
+      "screenshot": "blocks/98200c50faf4.jpg"
+    },
+    {
+      "id": "9f0f3f8f92f3",
+      "type": "default-content",
+      "selector": "#template--17768071233645__rich_text_3Pyj8y > div > div > h1",
+      "bounds": {
+        "x": 336,
+        "y": 265,
+        "width": 768,
+        "height": 52
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "heading"
+      },
+      "description": "section-block",
+      "features": {
+        "skeleton": "T",
+        "variant": "Tk",
+        "variantClean": "Tk"
+      },
+      "screenshot": null
+    },
+    {
+      "id": "2a920de426e0",
+      "type": "default-content",
+      "selector": "#template--17768071233645__rich_text_3Pyj8y > div > div > div",
+      "bounds": {
+        "x": 336,
+        "y": 333,
+        "width": 768,
+        "height": 72
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "text"
+      },
+      "description": "section-block",
+      "features": {
+        "skeleton": "T",
+        "variant": "Tn",
+        "variantClean": "Tk"
+      },
+      "screenshot": null
+    },
+    {
+      "id": "0c8ad5079809",
+      "type": "cards",
+      "selector": "#shopify-section-template--17768071233645__collection_list_9gEhfq",
+      "bounds": {
+        "x": 0,
+        "y": 524,
+        "width": 1440,
+        "height": 262
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "moderate",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": "list + link + image + text"
+      },
+      "description": "shopify-section",
+      "features": {
+        "skeleton": "[T]",
+        "variant": "[Tbk]",
+        "variantClean": "[Tk]",
+        "set": true
+      },
+      "screenshot": "blocks/0c8ad5079809.jpg"
+    },
+    {
+      "id": "c0788275849e",
+      "type": "unknown",
+      "selector": "#shopify-section-template--17768071233645__collection-products",
+      "bounds": {
+        "x": 0,
+        "y": 832,
+        "width": 1440,
+        "height": 2994
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "dense",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "button + field + list + image + text + link"
+      },
+      "description": "shopify-section",
+      "features": {
+        "skeleton": "([button|[T|button]|[T|input|(T svg)]] [form|([T|~({T ~(T)} T)] [~({T ~(T)} T)] [~({T ~(T)} T)|~(T)] [~(T)] nav)*3])",
+        "variant": "([button|[Tn|button]|[Tn|input|(Tn svg)]] [form|([Tnw|~w({Tb ~n(Tw)} Tknw)] [~w({Tb ~n(Tw)} Tknw)] [~w({Tb ~n(Tw)} Tknw)|~w(Tbknw)] [~w(Tbknw)] nav)*3])",
+        "variantClean": "([button|[Tk|button]|[Tk|input|(Tk svg)]] [form|([Tk|~w({Tk ~n(Tw)} Tk)] [~w({Tk ~n(Tw)} Tk)] [~w({Tk ~n(Tw)} Tk)|~w(Tk)] [~w(Tk)] nav)*3])"
+      },
+      "screenshot": "blocks/c0788275849e.jpg"
+    },
+    {
+      "id": "0dad8a4c37ce",
+      "type": "default-content",
+      "selector": "#template--17768071233645__rich_text_w6Cxxw > div > div > h2",
+      "bounds": {
+        "x": 336,
+        "y": 3873,
+        "width": 768,
+        "height": 37
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "heading"
+      },
+      "description": "section-block",
+      "features": {
+        "skeleton": "T",
+        "variant": "Tk",
+        "variantClean": "Tk"
+      },
+      "screenshot": null
+    },
+    {
+      "id": "5fc69f593143",
+      "type": "default-content",
+      "selector": "#template--17768071233645__rich_text_w6Cxxw > div > div > div",
+      "bounds": {
+        "x": 336,
+        "y": 3921,
+        "width": 768,
+        "height": 48
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "text"
+      },
+      "description": "section-block",
+      "features": {
+        "skeleton": "T",
+        "variant": "Tn",
+        "variantClean": "Tk"
+      },
+      "screenshot": null
+    },
+    {
+      "id": "202e1ad58cda",
+      "type": "cards",
+      "selector": "#shopify-section-template--17768071233645__icons_with_text_cUfzzz",
+      "bounds": {
+        "x": 0,
+        "y": 4016,
+        "width": 1440,
+        "height": 144
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": "list + text"
+      },
+      "description": "shopify-section",
+      "features": {
+        "skeleton": "[[T|T*3]]",
+        "variant": "[[T|Tn*3]]",
+        "variantClean": "[[T|Tk*3]]",
+        "set": true
+      },
+      "screenshot": "blocks/202e1ad58cda.jpg"
+    },
+    {
+      "id": "a738f9890273",
+      "type": "default-content",
+      "selector": "#template--17768071233645__rich_text_VjFrk8 > div > div > h2",
+      "bounds": {
+        "x": 288,
+        "y": 4207,
+        "width": 865,
+        "height": 104
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "heading"
+      },
+      "description": "section-block",
+      "features": {
+        "skeleton": "T",
+        "variant": "Tk",
+        "variantClean": "Tk"
+      },
+      "screenshot": null
+    },
+    {
+      "id": "c2a9d6352551",
+      "type": "default-content",
+      "selector": "#template--17768071233645__rich_text_VjFrk8 > div > div > div",
+      "bounds": {
+        "x": 336,
+        "y": 4327,
+        "width": 768,
+        "height": 48
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "text"
+      },
+      "description": "section-block",
+      "features": {
+        "skeleton": "T",
+        "variant": "Tn",
+        "variantClean": "Tk"
+      },
+      "screenshot": null
+    },
+    {
+      "id": "dad96eb10456",
+      "type": "cards",
+      "selector": "#shopify-section-template--17768071233645__multi_column_HPW7f7",
+      "bounds": {
+        "x": 0,
+        "y": 4421,
+        "width": 1440,
+        "height": 896
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "moderate",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": "list + image + heading + text + link"
+      },
+      "description": "shopify-section",
+      "features": {
+        "skeleton": "[T]",
+        "variant": "[Tbkn]",
+        "variantClean": "[Tk]",
+        "set": true
+      },
+      "screenshot": "blocks/dad96eb10456.jpg"
+    },
+    {
+      "id": "da5033e14470",
+      "type": "columns",
+      "selector": "#shopify-section-template--17768071233645__media_with_text_dP8VnF",
+      "bounds": {
+        "x": 0,
+        "y": 5390,
+        "width": 1440,
+        "height": 639
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "moderate",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": "heading + text + link"
+      },
+      "description": "shopify-section",
+      "features": {
+        "skeleton": "[T]",
+        "variant": "[Tn|Tkn]",
+        "variantClean": "[Tk]"
+      },
+      "screenshot": "blocks/da5033e14470.jpg"
+    },
+    {
+      "id": "57e0263792d6",
+      "type": "default-content",
+      "selector": "#template--17768071233645__multi_column_LJwAEA > div:nth-child(1)",
+      "bounds": {
+        "x": 0,
+        "y": 6076,
+        "width": 1440,
+        "height": 37
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "heading"
+      },
+      "description": "container",
+      "features": {
+        "skeleton": "T",
+        "variant": "Tk",
+        "variantClean": "Tk"
+      },
+      "screenshot": null
+    },
+    {
+      "id": "4c1f670d6db8",
+      "type": "cards",
+      "selector": "#template--17768071233645__multi_column_LJwAEA > div:nth-child(2)",
+      "bounds": {
+        "x": 0,
+        "y": 6137,
+        "width": 1440,
+        "height": 652
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "moderate",
+        "imagePattern": "noimg",
+        "hasGrid": true,
+        "structure": "list + image + heading + text + link"
+      },
+      "description": "container",
+      "features": {
+        "skeleton": "[T]",
+        "variant": "[Tbkn]",
+        "variantClean": "[Tk]",
+        "set": true
+      },
+      "screenshot": "blocks/4c1f670d6db8.jpg"
+    },
+    {
+      "id": "ce3ab5c90349",
+      "type": "default-content",
+      "selector": "#template--17768071233645__rich_text_LdVpwX > div > div > h1",
+      "bounds": {
+        "x": 336,
+        "y": 6908,
+        "width": 768,
+        "height": 52
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "heading"
+      },
+      "description": "section-block",
+      "features": {
+        "skeleton": "T",
+        "variant": "Tk",
+        "variantClean": "Tk"
+      },
+      "screenshot": null
+    },
+    {
+      "id": "0cbb2f4340a4",
+      "type": "default-content",
+      "selector": "#template--17768071233645__rich_text_LdVpwX > div > div > div",
+      "bounds": {
+        "x": 336,
+        "y": 6976,
+        "width": 768,
+        "height": 72
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "text + link"
+      },
+      "description": "section-block",
+      "features": {
+        "skeleton": "T",
+        "variant": "Tbn",
+        "variantClean": "Tk"
+      },
+      "screenshot": null
+    },
+    {
+      "id": "bec9965f6748",
+      "type": "unknown",
+      "selector": "#shopify-section-template--17768071233645__faq_8GY3HV",
+      "bounds": {
+        "x": 0,
+        "y": 7094,
+        "width": 1440,
+        "height": 252
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "moderate",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "heading + text + link"
+      },
+      "description": "shopify-section",
+      "features": {
+        "skeleton": "details",
+        "variant": "details",
+        "variantClean": "details"
+      },
+      "screenshot": "blocks/bec9965f6748.jpg"
+    },
+    {
+      "id": "3fe55984ef76",
+      "type": "unknown",
+      "selector": "#shopify-section-template--17768071233645__rich_text_HLzaWT",
+      "bounds": {
+        "x": 0,
+        "y": 7394,
+        "width": 1440,
+        "height": 44
+      },
+      "visualChars": {
+        "colorScheme": "light",
+        "density": "minimal",
+        "imagePattern": "noimg",
+        "hasGrid": false,
+        "structure": "link"
+      },
+      "description": "shopify-section",
+      "features": {
+        "skeleton": "T",
+        "variant": "Tk",
+        "variantClean": "Tk"
+      },
+      "screenshot": "blocks/3fe55984ef76.jpg"
+    }
+  ]
+}

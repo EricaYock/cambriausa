@@ -1,0 +1,31 @@
+{
+  "variantName": "carousel-gallery",
+  "baseBlock": "carousel",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "Product image gallery showing one image (or video poster) at a time",
+    "description": "Single full-width slide with prev/next arrows and an expand (full screen) icon, a progress bar under the stage and a thumbnail strip; the video slide shows a play button and its thumbnail a play overlay"
+  },
+  "contentPattern": {
+    "structure": "one row per slide, image cell only; a video slide holds its poster image plus a link to the .mp4 (optional text becomes a caption)",
+    "rationale": "Interactive rotating gallery with arrows, progress bar and thumbnails: Carousel. Looping clones in the source are dropped; thumbnails are generated from the slides."
+  },
+  "usage": "Product gallery with one slide visible at a time, prev/next arrows, a progress bar, a generated thumbnail strip and a full screen toggle. One row per slide with an image; for a video slide put the poster image and a link to the .mp4 in the same cell (the video loads only when the visitor presses play). Labels come from the placeholders sheet (gallery, slide, gallerySlideControls, previousSlide, nextSlide, showSlide, of, playVideo, viewFullscreen, exitFullscreen, galleryProgress, viewAll).",
+  "reuseGuidance": "Use for product or project image galleries where thumbnails help navigation. For feature-story slides with heading/text/CTA use carousel-preview.",
+  "options": [],
+  "memberVariantIds": [],
+  "sourceUrl": "https://www.cambriausa.com/quartz-countertops/quartz-colors/designs/quintessa",
+  "blockContent": {
+    "description": "Interactive product image gallery: 8 slides (full slab, swatch, 5 room photos, 1 walkthrough video with poster) with arrows, progress bar and thumbnail strip",
+    "structure": {
+      "source": "get_block_details /block-collection/carousel (as used for carousel-preview)",
+      "rows": [
+        [
+          "Image (only)",
+          "Text: optional heading, description, CTA link"
+        ]
+      ],
+      "notes": "carousel-gallery: one row per slide, image cell only (text cell empty/omitted), 8 slides in source order starting at slide 1: Quintessa full slab, Quintessa swatch, Quintessa and St. Loxley kitchen, design walkthrough video (poster image + link to https://www.cambriausa.com/content/dam/cusa/quartz-countertops/white/quintessa/quintessa-quartz-design-walkthrough.mp4), kitchen, Satin shower, commercial bathroom, hospitality vanity. Skip the looping clones. Thumbnails are generated from the slides."
+    }
+  }
+}

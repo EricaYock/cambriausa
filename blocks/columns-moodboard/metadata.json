@@ -1,0 +1,31 @@
+{
+  "variantName": "columns-moodboard",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "Design moodboard pairing a surface with complementary slabs, paint colours and hardware",
+    "description": "Bordered two-column mosaic: left a large lead image with an uppercase caption label overlaid, two smaller linked images beneath; right round paint swatches drawn from hex values above product images with captions below"
+  },
+  "contentPattern": {
+    "structure": "one row, two cells. Each image (optionally followed by a caption paragraph, optionally containing one link) becomes a tile. A list item or paragraph containing a hex colour (e.g. **Mocha Cream** / Benjamin Moore / #d3c9bd) becomes a round swatch.",
+    "rationale": "A fixed set of different content side by side that does not flow as look-alike items: Columns."
+  },
+  "usage": "Moodboard mosaic. Cell 1: lead image + caption, then further images + captions (a single link in a caption makes the whole tile link there). Cell 2: a list of paints, one item per paint with name, brand and hex code; then product images with captions.",
+  "reuseGuidance": "Use for design-detail moodboards. For a plain image/text split use columns-teaser.",
+  "options": [],
+  "memberVariantIds": [],
+  "sourceUrl": "https://www.cambriausa.com/quartz-countertops/quartz-colors/designs/quintessa",
+  "blockContent": {
+    "description": "Fixed two-column moodboard mosaic: complementary slabs (Quintessa, MacBeth link, Charlestown link) | paint swatches (Mocha Cream #d3c9bd, Northwood Brown #6f6151, Sage Mountain #95917f, Ruby Dusk #6d4243, all Benjamin Moore) and 2 hardware matches with captions",
+    "structure": {
+      "source": "get_block_details /block-collection/columns",
+      "rows": [
+        [
+          "Cell 1 content",
+          "Cell 2 content"
+        ]
+      ],
+      "notes": "columns-moodboard: one row. Cell 1: Quintessa slab image + caption \"Quintessa(TM)\"; MacBeth image linked to /quartz-countertops/quartz-colors/designs/macbeth + caption; Charlestown image linked to /quartz-countertops/quartz-colors/designs/charlestown + caption. Cell 2: list of 4 paints, each \"Name\" (bold), \"Benjamin Moore\", hex (#d3c9bd Mocha Cream, #6f6151 Northwood Brown, #95917f Sage Mountain, #6d4243 Ruby Dusk); then 2 hardware images each with caption (Kohler Purist Semi-Pro in Vibrant Polished Nickel; Slab style in Dark Brown). columns-teaser: one row. Cell 1: H2 \"Experience Cambria in Person\", 2 paragraphs, link \"Find Cambria near you\" (/dealer-locator/locations). Cell 2: kitchen image."
+    }
+  }
+}

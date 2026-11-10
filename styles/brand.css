@@ -1,0 +1,103 @@
+/*
+ * Cambria brand tokens – extracted from https://www.cambriausa.com (computed styles).
+ * See migration-work/brand.json for the raw extraction.
+ * Mobile-first; values step up at 600 / 900 / 1200px.
+ */
+
+:root {
+  /* palette */
+  --cambria-black: #000;
+  --cambria-white: #fff;
+  --cambria-gold: #8d6708; /* section headings, accents */
+  --cambria-gold-hover: #8d6708; /* source uses #9d730a; darkened to keep white text >= 4.5:1 */
+  --cambria-gold-active: #7b5a08;
+  --cambria-gold-bright: #c4962d; /* footer CTA */
+  --cambria-blue: #344e83; /* text links / text CTAs */
+  --cambria-blue-hover: #415b90;
+  --cambria-blue-active: #304060;
+  --cambria-gray-text: #666; /* body text */
+  --cambria-gray-copy: #4f4e4e; /* paragraph copy */
+  --cambria-gray-line: #d3d3d3;
+  --cambria-gray-light: #e9e9e9;
+  --cambria-cream: #f8f5f0; /* "cream" section background */
+  --cambria-focus: #101010;
+
+  /* semantic colors */
+  --background-color: var(--cambria-white);
+  --text-color: var(--cambria-gray-text);
+  --copy-color: var(--cambria-gray-copy);
+  --heading-color: var(--cambria-black);
+  --heading-accent-color: var(--cambria-gold);
+  --link-color: var(--cambria-blue);
+  --link-hover-color: var(--cambria-blue-hover);
+  --light-color: var(--cambria-cream);
+  --dark-color: var(--cambria-gray-text);
+
+  /* fonts */
+  --body-font-family: montserrat, montserrat-fallback, sans-serif;
+  --heading-font-family: montserrat, montserrat-fallback, sans-serif;
+  --accent-font-family: 'Inria Serif', georgia, serif;
+
+  /* body sizes (mobile) */
+  --body-font-size-l: 16px; /* lead paragraph: 16/25 mobile, 18/30 desktop */
+  --body-line-height-l: 25px;
+  --body-font-size-m: 16px;
+  --body-line-height: 24px;
+  --body-font-size-s: 14px;
+  --body-font-size-xs: 12px;
+
+  /* heading sizes (mobile) */
+  --heading-font-size-xxl: 28px; /* h1 */
+  --heading-line-height-xxl: 38px;
+  --heading-font-size-xl: 22px; /* h2 */
+  --heading-line-height-xl: 28px;
+  --heading-font-size-l: 18px; /* h3 */
+  --heading-line-height-l: 25px;
+  --heading-font-size-m: 18px; /* h4 */
+  --heading-font-size-s: 16px; /* h5 */
+  --heading-font-size-xs: 14px; /* h6 */
+
+  /* buttons */
+  --button-height: 45px;
+  --button-radius: 8px;
+  --button-padding-inline: 16px;
+  --button-font-size: 16px;
+  --button-transition: 0.3s;
+
+  /* layout */
+  --content-max-width: 1440px; /* 1300px content + 70px gutters */
+  --content-padding-inline: 20px;
+  --section-spacing: 50px;
+}
+
+@media (width >= 600px) {
+  :root {
+    --heading-font-size-xxl: 35px;
+    --heading-line-height-xxl: 45px;
+    --heading-font-size-xl: 28px;
+    --heading-line-height-xl: 35px;
+    --heading-font-size-l: 24px;
+    --heading-line-height-l: 30px;
+  }
+}
+
+@media (width >= 900px) {
+  :root {
+    --body-font-size-l: 18px;
+    --body-line-height-l: 30px;
+    --heading-font-size-xxl: 40px;
+    --heading-line-height-xxl: 45px;
+    --heading-font-size-xl: 35px;
+    --heading-line-height-xl: 42px;
+    --heading-font-size-m: 20px;
+    --heading-font-size-s: 18px;
+    --heading-font-size-xs: 16px;
+    --content-padding-inline: 40px;
+  }
+}
+
+@media (width >= 1200px) {
+  :root {
+    --content-padding-inline: 70px;
+  }
+}

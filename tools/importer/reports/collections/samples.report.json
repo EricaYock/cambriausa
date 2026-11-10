@@ -1,0 +1,17 @@
+{
+  "status": "success",
+  "url": "https://shop.cambriausa.com/collections/samples",
+  "path": "collections/samples",
+  "timestamp": "2026-11-09T18:47:30.931Z",
+  "title": "Quartz Countertop Samples – Cambria Samples Store",
+  "template": "collections",
+  "blocks": [
+    "cards-swatch",
+    "cards-product",
+    "cards-icon",
+    "cards-teaser",
+    "cards-teaser",
+    "columns-teaser",
+    "accordion-faq"
+  ]
+}

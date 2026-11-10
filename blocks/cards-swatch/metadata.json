@@ -1,0 +1,40 @@
+{
+  "variantName": "cards-swatch",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "Gallery of square design swatches, each linking to its detail page",
+    "description": "4-up grid of square surface-inset images with a single linked design-name caption beneath, no description"
+  },
+  "contentPattern": {
+    "structure": "image cell, then a cell with the linked design name",
+    "rationale": "Repeating look-alike items that wrap and each link to a detail page: Cards."
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": {
+    "pagesUsing": [
+      "/",
+      "/quartz-countertops/quartz-colors/designs/quintessa",
+      "/collections/samples"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-11-09T18:24:10.310Z"
+  },
+  "reuseGuidance": "Use for product or design galleries where each item is just an image and a linked name. Use cards-teaser when items carry a heading, description and CTA.",
+  "sourceUrl": "https://www.cambriausa.com",
+  "blockContent": {
+    "description": "Four design tiles: inset image + linked design name, each to a design detail page",
+    "structure": {
+      "source": "get_block_details /block-collection/cards",
+      "rows": [
+        [
+          "Image",
+          "Text: optional heading, description, CTA link"
+        ]
+      ],
+      "notes": "One row per card. Section 2: image + linked design name paragraph. Section 4: image + H3 linked title. Section 6: image + H3 + paragraph + link."
+    }
+  },
+  "usageDescription": "Grid of square product/design swatches (4-up on desktop, 2-up on mobile). One row per card: image cell, and a cell with the linked design name. The whole tile links to the caption link."
+}

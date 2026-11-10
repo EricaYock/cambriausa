@@ -1,0 +1,40 @@
+{
+  "variantName": "columns-teaser",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "Promotional text with CTA beside a photo",
+    "description": "50/50 split: text (heading, paragraphs, CTA) on the left vertically centred, photo on the right filling the band height; stacked on mobile"
+  },
+  "contentPattern": {
+    "structure": "one row, two cells: text cell (H2, paragraphs, link) and image cell",
+    "rationale": "Two different pieces of content side by side: Columns."
+  },
+  "usage": {
+    "pagesUsing": [
+      "/",
+      "/quartz-countertops/quartz-colors/designs/quintessa",
+      "/collections/samples"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-11-09T18:24:10.310Z"
+  },
+  "reuseGuidance": "Use for a single promo next to a photo. For multiple look-alike teasers use cards-teaser.",
+  "options": [],
+  "memberVariantIds": [],
+  "sourceUrl": "https://www.cambriausa.com/quartz-countertops/quartz-colors/designs/quintessa",
+  "blockContent": {
+    "description": "Text (title \"Experience Cambria in Person\", 2 paragraphs, CTA link) beside a kitchen photo",
+    "structure": {
+      "source": "get_block_details /block-collection/columns",
+      "rows": [
+        [
+          "Cell 1 content",
+          "Cell 2 content"
+        ]
+      ],
+      "notes": "columns-moodboard: one row. Cell 1: Quintessa slab image + caption \"Quintessa(TM)\"; MacBeth image linked to /quartz-countertops/quartz-colors/designs/macbeth + caption; Charlestown image linked to /quartz-countertops/quartz-colors/designs/charlestown + caption. Cell 2: list of 4 paints, each \"Name\" (bold), \"Benjamin Moore\", hex (#d3c9bd Mocha Cream, #6f6151 Northwood Brown, #95917f Sage Mountain, #6d4243 Ruby Dusk); then 2 hardware images each with caption (Kohler Purist Semi-Pro in Vibrant Polished Nickel; Slab style in Dark Brown). columns-teaser: one row. Cell 1: H2 \"Experience Cambria in Person\", 2 paragraphs, link \"Find Cambria near you\" (/dealer-locator/locations). Cell 2: kitchen image."
+    }
+  },
+  "usageDescription": "Teaser band with heading, text and CTA next to a photo that fills its half. One row; text cell and image cell in either order."
+}

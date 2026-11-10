@@ -1,0 +1,66 @@
+.cards-swatch > ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cards-swatch .cards-swatch-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* images keep their authored crop (2:3 insets, square samples, slab photos) */
+.cards-swatch .cards-swatch-card-image picture,
+.cards-swatch .cards-swatch-card-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: auto;
+}
+
+.cards-swatch .cards-swatch-card-body {
+  padding-top: 12px;
+}
+
+.cards-swatch .cards-swatch-card-body > * {
+  margin: 0;
+  font-size: var(--body-font-size-l);
+  line-height: var(--body-line-height-l);
+}
+
+/* stretch the caption link over the whole tile */
+.cards-swatch .cards-swatch-card-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.cards-swatch .cards-swatch-card-link:focus-visible {
+  outline: none;
+}
+
+.cards-swatch .cards-swatch-card:has(.cards-swatch-card-link:focus-visible) {
+  outline: 2px solid var(--cambria-focus);
+  outline-offset: 2px;
+}
+
+@media (width >= 900px) {
+  /* one row of swatches (up to six), equal columns */
+  .cards-swatch > ul {
+    grid-template-columns: none;
+    grid-auto-columns: minmax(0, 1fr);
+    grid-auto-flow: column;
+    gap: 12px;
+  }
+
+  /* longer galleries wrap 4-up */
+  .cards-swatch > ul:has(> li:nth-child(7)) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-flow: row;
+    row-gap: 20px;
+  }
+}

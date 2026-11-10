@@ -1,0 +1,198 @@
+.cards-product > ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* product tile */
+.cards-product .cards-product-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  border: 1px solid #e1e1e1;
+  background-color: #f9f9f9;
+  color: var(--cambria-gray-copy);
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.cards-product .cards-product-card-image {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.cards-product .cards-product-card-image picture,
+.cards-product .cards-product-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cards-product .cards-product-card-badges {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  padding: 12px 0;
+}
+
+.cards-product .cards-product-card-badge {
+  display: flex;
+  padding: 2px 6px;
+  background-color: var(--cambria-gray-copy);
+  color: var(--cambria-white);
+  font-size: 11px;
+  line-height: 17px;
+}
+
+.cards-product .cards-product-card-body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 16px 0 0;
+}
+
+.cards-product .cards-product-card-body > * {
+  margin: 0;
+}
+
+.cards-product .cards-product-card-vendor {
+  color: rgb(79 78 78 / 70%);
+  font-size: 14.08px;
+  line-height: 21.12px;
+}
+
+.cards-product .cards-product-card-name {
+  margin-top: 4px;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+}
+
+main .cards-product a.cards-product-card-link:any-link,
+main .cards-product a.cards-product-card-link:hover {
+  color: inherit;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.cards-product .cards-product-card-price {
+  margin-top: auto;
+  padding-top: 24px;
+  font-size: 18.4px;
+  line-height: 27.6px;
+}
+
+/* stretch the product name link over the whole tile */
+.cards-product .cards-product-card-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.cards-product .cards-product-card:has(.cards-product-card-link:focus-visible) {
+  outline: 2px solid var(--cambria-focus);
+  outline-offset: 2px;
+}
+
+.cards-product .cards-product-card-link:focus-visible {
+  outline: none;
+}
+
+/* promo tile: photo fills the tile, title and CTA overlaid at the bottom */
+.cards-product .cards-product-promo {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 320px;
+  overflow: hidden;
+  text-align: center;
+}
+
+.cards-product .cards-product-promo .cards-product-card-image {
+  position: absolute;
+  inset: 0;
+  aspect-ratio: auto;
+}
+
+.cards-product .cards-product-promo .cards-product-card-body {
+  position: relative;
+  flex: 1 1 100%;
+  align-items: center;
+  padding: 20px;
+  color: var(--cambria-white);
+  font-size: calc(16.6px + 0.09vw);
+  line-height: 1.5;
+}
+
+.cards-product .cards-product-promo .cards-product-card-body > :is(p, h2, h3, h4, h5, h6):not(.button-container) {
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.cards-product .cards-product-promo .button-container {
+  margin-top: 12px;
+}
+
+main .cards-product .cards-product-promo a.button:any-link {
+  min-height: 0;
+  padding: 13px 22px;
+  border: 0;
+  border-radius: 9px;
+  background-color: #2e2e2e;
+  color: var(--cambria-white);
+  font-size: 14.72px;
+  font-weight: 700;
+  line-height: 17.664px;
+  text-decoration: none;
+  transition: opacity 0.6s, color 0.6s;
+}
+
+main .cards-product .cards-product-promo a.button:any-link:hover,
+main .cards-product .cards-product-promo a.button:any-link:active {
+  background-color: #2e2e2e;
+  color: var(--cambria-white);
+  text-decoration: none;
+}
+
+@media (width >= 600px) {
+  .cards-product .cards-product-promo .cards-product-card-body {
+    padding: 48px;
+  }
+}
+
+@media (width >= 900px) {
+  .cards-product > ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .cards-product .cards-product-card {
+    padding: 12px;
+  }
+
+  .cards-product .cards-product-card-badge {
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+
+  .cards-product .cards-product-promo .cards-product-card-body {
+    padding: 24px 30px;
+    font-size: calc(18.47px + 0.1vw);
+  }
+}
+
+@media (width >= 1200px) {
+  .cards-product > ul {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}

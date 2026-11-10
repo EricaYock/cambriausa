@@ -1,0 +1,33 @@
+{
+  "variantName": "hero-gradient",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "Mid-page promo banner on a photo with a dark left gradient",
+    "description": "Full-width photo with black left-to-right gradient overlay, left-aligned white heading, text and one button; shorter (512px) than the video hero"
+  },
+  "contentPattern": {
+    "structure": "Row 1: background image. Row 2: heading, text, one CTA link",
+    "rationale": "Photo background with overlaid text and CTA; the photo belongs to the block (hero), section not colored."
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": "Full-width photo banner with a dark left-to-right gradient behind left-aligned heading, text and one CTA. Row 1: background image. Row 2: heading, text, link.",
+  "reuseGuidance": "Use for mid-page promo banners on a photo. For a video background use hero-video.",
+  "sourceUrl": "https://www.cambriausa.com",
+  "blockContent": {
+    "description": "Background photo, H2 \"More to See, More to Savor\", paragraph, \"Explore now\" CTA",
+    "structure": {
+      "source": "get_block_details /block-collection/hero",
+      "rows": [
+        [
+          "Background image or video link (with poster image)"
+        ],
+        [
+          "Optional eyebrow/logo image, heading, subheading paragraph, CTA links"
+        ]
+      ],
+      "notes": "Section 1 puts the poster image plus a link to https://www.cambriausa.com/content/dam/cusa/videos/launch-videos/ndl-summer-26/ndl-q3-2026-cusa-homepage-carousel-720p.mp4 in row 1; FOAM logo image above the H1 in row 2. Keep \"Introducing NEW Cambria Quartz Surfaces\" as H1 and \"More to See, More to Savor\" as H2."
+    }
+  }
+}

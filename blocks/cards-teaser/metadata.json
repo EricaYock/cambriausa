@@ -1,0 +1,40 @@
+{
+  "variantName": "cards-teaser",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "visualCharacteristics": {
+    "purpose": "Teasers for tools or pages with image, heading, text and a text link",
+    "description": "3-up teasers: tall image on top, heading, paragraph and chevron text link below"
+  },
+  "contentPattern": {
+    "structure": "image cell, then a text cell with heading, paragraph and link",
+    "rationale": "Look-alike items (image, title, text, link) each pointing to a different page that wrap on smaller screens: Cards, not Columns."
+  },
+  "options": [],
+  "memberVariantIds": [],
+  "usage": {
+    "pagesUsing": [
+      "/",
+      "/quartz-countertops/quartz-colors/designs/quintessa",
+      "/collections/samples"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-11-09T18:24:10.310Z"
+  },
+  "reuseGuidance": "Use for teasers pointing to tools or pages with a short description. Use cards-swatch for image-plus-name galleries.",
+  "sourceUrl": "https://www.cambriausa.com",
+  "blockContent": {
+    "description": "Three teasers: Visualize Your Design, Explore Designs, Visit a Showroom; image, H3, paragraph, link",
+    "structure": {
+      "source": "get_block_details /block-collection/cards",
+      "rows": [
+        [
+          "Image",
+          "Text: optional heading, description, CTA link"
+        ]
+      ],
+      "notes": "One row per card. Section 2: image + linked design name paragraph. Section 4: image + H3 linked title. Section 6: image + H3 + paragraph + link."
+    }
+  },
+  "usageDescription": "3-up teasers (1-up mobile, 2-up tablet): tall image, heading, paragraph and a chevron text link. One row per card: image cell, text cell."
+}
